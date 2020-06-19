@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head><link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+  </script>
+  <style>
+  .hide {
+    display:none;
+  }
+  .GlobalNavTag:hover {color:#c67b10 !important;border:solid 1px #d98484 !important;background-color:black !important;color:#c67b10 !important;}
+  .LocalGroupNavTag:hover{color:#29A5FF !important;border:solid 1px #d98484 !important;background-color:black !important;color:#29A5FF !important;}
+  .IndependentDeliverables:hover{text-decoration:underline;color:#d98484 !important;border:solid 1px #d98484 !important;background-color:black !important;color:#d98484 !important;}
+  .LocalGroupedDeliverable:hover{text-decoration:underline;color:#99DFFF !important;border:solid 1px #d98484 !important;background-color:black !important;color:#d98484 !important;}
+  .scrollDiv{resize: vertical;border: 1px solid #222; padding: 10px;overflow-x:hidden;padding-left:15px;height:650px;float: left; display: inline;}
+
+  </style>
+  <script>
+  function myFunction(b, idA) {
+    if(document.getElementById("deliverabledeets" + idA).classList.contains("hide") )
+      {
+      document.getElementById("deliverabledeets" + idA).classList.remove("hide");
+
+      document.getElementById(b + '1').classList.add("hide");
+      }
+    else
+      {
+        document.getElementById("deliverabledeets" + idA).classList.add("hide");
+        
+        
+      }
+
+  }
+  function BackToDelivList(c, d) {
+    
+      document.getElementById(c + '1').classList.remove("hide");
+
+      var testarray = document.getElementsByClassName(d);
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].className += " hide";
+        }
+      
+
+
+  }
+  </script>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <title>SiteMap_template</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            min-width: 0;
+            margin: 0 10px;
+        }
+        #nav-thumbs{
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        .nav-thumb span{
+            pointer-events: none;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            display: block;
+            margin:10px auto;
+            margin-bottom: 0;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #76838f;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+        #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+        #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+        .nav-thumb >div:hover{
+            box-shadow:1px 1px 4px rgba(0,0,0,.4);
+        }
+        .selected .number{
+            border-color: #08a1ef transparent;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info"></div>
+      <div id="main-content">
+        <div id="svg-container"><svg xmlns="http://www.w3.org/2000/svg" width="1122" xmlns:xlink="http://www.w3.org/1999/xlink" id="page1" preserveAspectRadio="xMinYMin meet" viewBox="0 0 1123 794" xmlns:ev="http://www.w3.org/2001/xml-events" height="793"><style type="text/css"><![CDATA[
+.st1 {fill:#000000;font-family:Georgia;font-size:23pt}
+.st2 {text-decoration:underline}
+]]></style><defs/><rect x="0" y="0" stroke="#808080" width="1123" height="794" fill="#ffffff"/><a href="#MainDashboard" data-toggle="modal" data-target="#MainDashboard"><g id="shape1" transform="translate(445.76,47)"><path stroke="#3498db" d="M0,0L231,0L231,107.7L0,107.7L0,0z" fill="#e3ac5d"/><text class="st1"><tspan x="80" y="45.9" class="st2">Main </tspan><tspan x="40" y="81.9" class="st2">Dashboard</tspan></text></g></a><a href="#Key-LegendModalPage" data-toggle="modal" data-target="#Key-LegendModalPage"><g id="shape2" transform="translate(120.5,343)"><path stroke="#3498db" d="M0,0L231,0L231,107.7L0,107.7L0,0z" fill="#e3ac5d"/><text class="st1"><tspan x="33" y="45.9" class="st2">Key-Legend </tspan><tspan x="35" y="81.9" class="st2">Modal Page</tspan></text></g></a><a href="#WorkingwithAlex" data-toggle="modal" data-target="#WorkingwithAlex"><g id="shape3" transform="translate(445.76,343)"><path stroke="#3498db" d="M0,0L231,0L231,107.7L0,107.7L0,0z" fill="#e3ac5d"/><text class="st1"><tspan x="22" y="45.9" class="st2">Working with </tspan><tspan x="85" y="81.9" class="st2">Alex</tspan></text></g></a><a href="#lol" data-toggle="modal" data-target="#lol"><g id="shape4" transform="translate(771.02,343)"><path stroke="#3498db" d="M0,0L231,0L231,107.7L0,107.7L0,0z" fill="#e3ac5d"/><text class="st1"><tspan x="98" y="63.9" class="st2">lol</tspan></text></g></a></g><g id="shape5" transform="translate(561.26,154.71)"><path stroke-width="6" stroke="#0070c0" d="M0,0L0,67.3L-325.3,67.3L-325.3,175.6" fill="none"/><path stroke-width="1" stroke="#0070c0" stroke-linecap="round" d="M-325.3,188.3L-317.9,162.8L-325.3,175.6L-332.6,162.8L-325.3,188.3" fill="#0070c0"/></g><g id="shape6" transform="translate(561.26,222)"><path stroke-width="6" stroke="#0070c0" d="M0,0L0,108.3" fill="none"/><path stroke-width="1" stroke="#0070c0" stroke-linecap="round" d="M0,121L7.3,95.5L0,108.3L-7.3,95.5L0,121" fill="#0070c0"/></g><g id="shape7" transform="translate(561.26,222)"><path stroke-width="6" stroke="#0070c0" d="M0,0L325.3,0L325.3,108.3" fill="none"/><path stroke-width="1" stroke="#0070c0" stroke-linecap="round" d="M325.3,121L332.6,95.5L325.3,108.3L317.9,95.5L325.3,121" fill="#0070c0"/></g></svg></div>
+<div  id="MainDashboard" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:750px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('MainDashboard', 'MainDashboard' )"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Main Dashboard/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="MainDashboard1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    
+                        <button class="LocalGroupNavTag" type="button" data-toggle="collapse" data-target="#LocalGroupDeliverables60" style="font-size:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#29A5FF;" ><h5 style="font-size:30px;text-decoration:underline;">Footer</h5></button>
+                        <div  class="collapse" id="LocalGroupDeliverables60">       
+                        <button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:30px" 
+                            onClick="myFunction('MainDashboard',59 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Link to server-side rendered collapse-modal key legend</h6></button><button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:30px" 
+                            onClick="myFunction('MainDashboard',63 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Modal Button Site Map Nodes</h6></button></div></div> <div style="padding:0;" class="MainDashboard hide" id="deliverabledeets59"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">Link to server-side rendered collapse-modal key legend</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>Project Functionality:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>Link to Generate a Key Legend will point to a php script. This will render the HTML that displays containers for each Web page. Within each container, a list of buttons for each local grouping (which will be a drop down) and independent deliverables (a modal window).&nbsp;</p><p>This will follow the following hierarchy:&nbsp;</p><p>Global Nav Tag [Container]&nbsp;</p><ol><li>[Numeric Identifier] Local Nav Tag [Collapse Button]<ol><li>Deliverable Title [Modal Button]&nbsp;<ol><li>Deliverable Type&nbsp;</li><li>Deliverable Core Idea</li><li>Deliverable Delivery Method&nbsp;</li></ol></li><li>Requirement Title [Dropdown]&nbsp;<ol><li>Requirement Type</li><li>Requirement Description</li></ol></li><li>Strategic Objective Title [Dropdown]&nbsp;<ol><li>Strategic Objective Question</li><li>Strategic Objective Type</li><li>Strategic Objective Description</li></ol></li></ol></li></ol><p>&nbsp;**Should also output all Local Nav Tags, and Independent Deliverables, without an assigned Global Nav Tag to an un-grouped container** Afterwards, I can inspect each container in the browser, copy/paste each into Edraw&#39;s HTML, wire frame export. This will provide reference for each wire frame construction as well.</p><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement59"><h6 style="font-size:30px;">Functional - What does the user need to do in order reach their objective?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets59">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>Generate a Key legend for each Web page's Wire frame.</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The Key legend will appear at the top-right of each web page&#39;s wire frame.<br>Each node will have a numeric identifier that corresponds to the the items on the wire frame.<br>Click on the listed group or independent deliverable nodes to view all nested UXD information.<br><br>Key Legend Hierarchy is as follows:<br>Global Nav Tag [Document Title]</p><ol><li>[Numeric Identifier] Local Nav Tag (or Independent Deliverable)<ol><li>&nbsp;Deliverable Title</li><li>Deliverable Type</li><li>Deliverable Core Idea</li><li>Deliverable Delivery Method<ol><li>Requirement Title</li><li>Requirement Type</li><li>Requirement Description</li><li>Strategic Objective Title<ol><li>Strategic Objective Question</li><li>Strategic Objective Description</li></ol></li></ol></li></ol></li></ol></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement59"><h6 style="font-size:30px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets59">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="MainDashboard hide" id="deliverabledeets63"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">Modal Button Site Map Nodes</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>Project Functionality:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I need the dashboard to contain a php link that renders the html code for each Site Map Node. The site map itself will have to be manually created, via EDraw. Once I export the Site Map as html code, I will wrap <a>&#39;s around the node container pointing to it&#39;s corresponding modal-button.&nbsp;</a></p><p><a>I will then append their modal windows. Each site map node (or web page) will be clickable and on click will bring up a modal window that displays the following hierarchy:&nbsp;</a></p><p><a>Global Nav Tag or Web Page Name (Modal Button)</a></p><ol><li><a>Local Nav Tag Group Name(Collapse to list its Deliverables)&nbsp;</a><ol><li><a>Independent Deliverable Title (Collapse)</a><ol><li><a>Deliverable Type (Collapse)</a></li><li><a>Deliverable Core Idea&nbsp;</a></li><li><a>Deliverable Delivery Method&nbsp;</a></li><li><a>Requirement Title (Collapse)&nbsp;</a><ol><li><a>Requirement Type&nbsp;</a></li><li><a>Requirement Description&nbsp;</a></li><li><a>Strategic Objective Title (Collapse)&nbsp;</a><ol><li><a>Strategic Objective Description&nbsp;</a></li><li><a>Strategic Objective Question</a></li><li><a>Strategic Objective Description&nbsp;</a></li></ol></li></ol></li></ol></li></ol></li><li><a>Independent Deliverable Title (Collapse)&nbsp;</a><ol><li><a>&nbsp;Deliverable Type(Collapse)</a><ol><li><a>Deliverable Core Idea&nbsp;</a></li><li><a>Deliverable Delivery Method&nbsp;</a></li><li><a>&nbsp;Requirement Title (Collapse)&nbsp;</a><ol><li><a>&nbsp;Requirement Type&nbsp;</a></li><li><a>Requirement Description</a></li><li><a>Strategic Objective Title (Collapse)&nbsp;</a><a></a><ol><li><a>Strategic Objective Type</a></li><li><a>Strategic Objective Question&nbsp;</a></li><li><a>Strategic Objective Description</a></li></ol></li></ol></li></ol></li></ol></li></ol><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement63"><h6 style="font-size:30px;">Functional - What does the user need to do in order reach their objective?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets63">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>I need to communicate UXD info generated, via site map</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement63"><h6 style="font-size:30px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets63">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  </div>
+                 
+                                </div></div>
+
+              </div>
+              <div  id="Key-LegendModalPage" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:750px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('Key-LegendModalPage', 'Key-LegendModalPage' )"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Key-Legend Modal Page/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="Key-LegendModalPage1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    </div> </div>
+                 
+                </div>
+
+              </div>
+              <div  id="lol" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:750px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('lol', 'lol' )"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ lol/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="lol1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    
+                        <button class="LocalGroupNavTag" type="button" data-toggle="collapse" data-target="#LocalGroupDeliverables47" style="font-size:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#29A5FF;" ><h5 style="font-size:30px;text-decoration:underline;">Technical Shit</h5></button>
+                        <div  class="collapse" id="LocalGroupDeliverables47">       
+                        <button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:30px" 
+                            onClick="myFunction('lol',3 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Setup a local WAMP Server to host database/ server-side rendering.</h6></button><button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:30px" 
+                            onClick="myFunction('lol',45 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Back up client's UXD SQL Databases and Source Code</h6></button><button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:30px" 
+                            onClick="myFunction('lol',62 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Batch script that instances the application template source code as a client dedicated object</h6></button></div></div> <div style="padding:0;" class="lol hide" id="deliverabledeets3"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">Setup a local WAMP Server to host database/ server-side rendering.</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>General Solution:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>Host each client&#39;s UXD information locally on it&#39;s own dedicated SQL Database Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p><p>Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement3"><h6 style="font-size:30px;">Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets3">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>How am I going to host this application?</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">I need to create a repository for client UXD information. 
+
+Client information would be collected via  form to ensure UXD best practices. 
+
+I need the client on-boarding process to be seamless, repeatable, with no chance for loss of data.</div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement3"><h6 style="font-size:30px;">What does the user need to accomplish using this application?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets3">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>What I need to accomplish with this application.</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="WorkingwithAlex hide" id="deliverabledeets45"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">Back up client's UXD SQL Databases and Source Code</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>General Solution:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I will backup the WAMP Server&#39;s SQL Server Folder directory to an external HDD.
+I will create/ backup clients&#39; source code to multiple locations.
+I will also backup the source code template separately.</p><p>We need to explicitly define the specific mission critical files, before we back them up. (See Below...)</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement45"><h6 style="font-size:30px;">Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets45">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>Must be able to backup/ archive client-project generated information.</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">Must find a way to backup client information, even after business has concluded.
+
+Must secure proprietary source code as well.</div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement45"><h6 style="font-size:30px;">What does the user need to accomplish using this application?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets45">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>What I need to accomplish with this application.</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="lol hide" id="deliverabledeets62"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">Batch script that instances the application template source code as a client dedicated object</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>General Solution:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">Write a batch script that uses regular expressions to instance the template. 
+
+The script will ask for the desired name for the client's database, and will rewrite database names of the affected lines of code within each php script. 
+
+
+</div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement62"><h6 style="font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets62">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>User needs to be able to create a client profile quickly</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I need to be able to create for each client a project folder dedicated to their UXD information. This would include the underlying front end that retrieves and renders that information, as each client will need a dedicated database.</p></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement62"><h6 style="font-size:30px;">What does the user need to accomplish using this application?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets62">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>What I need to accomplish with this application.</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                                  </div>
+                                  </div>  </div>
+                 
+                </div>
+
+              </div>
+              <div  id="WorkingwithAlex" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:750px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('WorkingwithAlex', 'WorkingwithAlex' )"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Working with Alex/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="WorkingwithAlex1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    <button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('WorkingwithAlex', '74' )"><h6 style="font-size:30px;" >How Alex's service works.</h6></button></div> <div style="padding:0;" class="WorkingwithAlex hide" id="deliverabledeets74"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;">How Alex's service works.</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; "><strong>Content Deliverable:</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>Alex will write a block of content covering the following headlines:</p><ul><li>What is UXD? Why does it matter?</li><li>How Alex&#39;s service works.&nbsp;</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.</li><li>How I Help? (How this service expedites the web building process.)</li><li>Fast, Affordable website blue printing, 100% money back guarantee!<ul><li>How this service lowers overhead, confusion, and frustration.</li></ul></li></ul><p>We will create a page dedicated to hosting all of this information.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement74"><h6 style="font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets74">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%; "><strong>The Small Business Owner wants to know how your service will benefit his website and business</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The website must communicate the following information:&nbsp;</p><ol><li>How Alex&#39;s service works.&nbsp;<ol><li>What is UXD? Why does it matter?&nbsp;</li><li>How this service expedites the web building process.&nbsp;</li><li>How this service lowers overhead, confusion, and frustration.</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.&nbsp;</li></ol></li><li>What Alex Delivers.<ol><li>Alex delivers sitemaps and wireframes (needs work)</li><li>Alex delivers sitemaps and wireframes (needs work)&nbsp;</li><li>All produced material is produced in an html format.<ol><li>&nbsp;This information is easily shared, and requires only your browser to open it.&nbsp;</li><li>&nbsp;Communicates explicitly what you determine to be a successful job for webdevs, web designers, and content creators.&nbsp;</li><li>&nbsp;Not yet mobile friendly!</li></ol></li></ol></li></ol></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement74"><h6 style="font-size:30px;">How is the Need/ Problem/ Opportunity Defined by the prospect?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets74">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;"><strong>We need to address these common concerns for small business owners</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><ol><li>&quot;I need to build an effective business website, but I&#39;m not technically savvy.&quot;</li><li>&nbsp;&quot;I need someone to just build the damn thing for me, I dont have time for this shit.&quot;</li><li>&nbsp;&quot;I know that having a website is important in driving business, but I dont know how to capitalize on this opportunity 100%...&quot;&nbsp;</li><li>&quot;I am short handed and budgeted. <strong><em>I know somewhere down the line I will need</em></strong> to plan a website for my business. I just don&#39;t have time.&quot;</li></ol></div>
+                                  </div>
+                                  </div>  </div>
+                 
+                </div>
+
+              </div>
+              </div>
+      </div>
+      <div id="navBar">
+        <div id="nav-thumbs"/>
+      </div>
+    </div>
+    <script>
+        const svgs=document.getElementById("svg-container").children;
+        const UA=window.navigator.userAgent;
+        const ua=(UA.indexOf('rv:11')+UA.indexOf('Firefox'))>=0;
+        const svgcount=document.getElementById('svg-container').childElementCount;
+        var styleArr=[];
+        var heightArr=[];
+        var navBar=document.getElementById('navBar');
+        var conInfo=document.getElementById('content-info');
+        for(var i=0;i<svgcount;i++){
+            styleArr[i] = {width:svgs[i].getAttribute('width'),height:svgs[i].getAttribute('height')}
+        }
+        window.onresize=function () {
+            renavstyle();
+            resvgstyle();
+        };
+        window.onscroll=renavstyle;
+        window.onload=function () {
+            renavstyle();
+            var sideWidth=navBar.offsetWidth;
+            document.getElementById('content-info').style.marginRight=sideWidth+'px';
+            document.getElementById('main-content').style.marginRight=sideWidth+'px';
+            resvgstyle();
+            doscroll();
+        };
+        function recontainstyle() {
+            var topHeight=conInfo.clientHeight;
+            var svgHeight=0;
+            for(var i=0;i<svgcount;i++){
+                heightArr[i]=svgs[i].getBoundingClientRect().height+10;
+                svgHeight+=svgs[i].clientHeight ||svgs[i].getBoundingClientRect().height;
+            }
+            var fullHeight=svgHeight+Number(topHeight);
+            if(fullHeight<window.innerHeight){
+            document.getElementById('main-content').style.position='absolute';
+            document.getElementById('main-content').style.top=topHeight+'px';
+        }else{
+            document.getElementById('main-content').style.position='';
+        }
+        }
+        function resvgstyle() {
+            var sideWidth=navBar.offsetWidth+20;
+            for(var i=0;i<svgcount;i++){
+                var oriWidth = styleArr[i].width;
+                var oriHeight = styleArr[i].height;
+                var percent = oriHeight / oriWidth;
+                var innerWidth=document.body.offsetWidth-sideWidth;
+                if (innerWidth <= oriWidth) {
+                    svgs[i].removeAttribute('width');
+                    svgs[i].removeAttribute('height');
+                    if (ua) {
+                        svgs[i].setAttribute('height',innerWidth*percent);
+                    }
+                }else {
+                    svgs[i].setAttribute('width', oriWidth);
+                    svgs[i].setAttribute('height', oriHeight);
+                }
+            }
+            recontainstyle();
+        }
+        function renavstyle() {
+            var topHeight=conInfo.clientHeight;
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            if(scrollTop>topHeight){
+                document.getElementById('navBar').style.top=0+'px';
+            }else{
+                document.getElementById('navBar').style.top=topHeight-scrollTop+'px';
+            }
+            doscroll();
+        }
+        function doscroll() {
+            var topHeight=conInfo.clientHeight;
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            for(var i=0;i<svgcount;i++){
+                var sum=0;
+                for(var j=0;j<=i;j++){
+                    sum+=heightArr[j];
+                }
+                if(scrollTop+window.innerHeight/2-topHeight-sum<0){
+                    var sub=Number(i)+1;
+                    if(document.querySelector('#nav-thumbs .selected')){
+                        document.querySelector('#nav-thumbs .selected').classList.remove('selected');
+                    }
+                    document.querySelector('.nav-thumb:nth-of-type('+sub+')').classList.add('selected');
+                    break;
+                }
+            }
+        }
+        var navs=document.querySelectorAll('.nav-thumb');
+        for(i=0;i<navs.length;i++){
+            navs[i].children[0].onclick=function () {
+                document.querySelector('#nav-thumbs .selected').classList.remove('selected');
+                this.parentNode.classList.add('selected');
+            }
+        }
+</script>
+  </body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+
+
+
+<!-- BootStrap CDN and Local CSS --> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<!-- Jquery CDN and Local JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- BootStrap CDN and Local JS --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+<style>
+.All{text-align:left;}
+.DelHov:hover{background-color:black !important;color:#d98484 !important;}
+.ReqHover:hover{background-color:black !important;color:#e8dd67 !important;}
+.ObjHover:hover{background-color:black !important;color:#a3c09a !important;}
+.GNTHover:hover{background-color:black !important;color:#FF9900 !important;}
+.hide{display:none;}
+.modal-body{padding:0;}
+</style>
+<script>
+  function DelViewer(DelID, GNTID) {
+    $(".All").hide();
+    $(".LocalGroups").hide();
+    $(".DelHeader").hide();
+    $(".ReqHeader").hide();
+    $(".DelHeader"+GNTID).show();
+    $(".DemHeader").hide();
+    $("#DelModal"+DelID).show();
+    $("#DemHeader3"+DelID).show();
+    //$("#DelHeader"+DelID).show();
+  }
+  function ReqViewer(ReqID) {
+    $(".All").hide();
+    $("#ReqHeader"+ReqID).show();
+    $("#ReqBody"+ReqID).show();
+  }
+  function ObjViewer(ObjID) {
+    $(".All").hide();
+    $("#ObjBody"+ObjID).show();
+
+  }
+  function GNTViewer(GNTID) {
+    $(".All").hide();
+    $(".LocalGroups").hide();
+    $(".LocalDHeader").hide();
+    $(".GNTHover").hide();
+    $(".DemHeader").hide();
+    $(".ReqHeader").hide();
+    $("#GNTHeader"+GNTID).show();
+    $(".DTGNT"+GNTID).show();
+    
+
+  }
+</script>
+</head>
+<body>
+<div class="container">
+ <a data-toggle='modal' data-target='#ORDModal' id='Home' onclick='GNTViewer(6)'class='btn btn-primary ' href='#' style='padding-left:10px;width:100%;text-align:left;background-color:#FF9900;color:black;'><h4 >***Home***</h4></a><br>
+
+   <a data-toggle='modal' data-target='#ORDModal' id='Blogs' onclick='GNTViewer(16)'class='btn btn-primary ' href='#' style='padding-left:10px;width:100%;text-align:left;background-color:#FF9900;color:black;'><h4 >***Blogs***</h4></a><br>
+
+  
+<div id="ORDModal" class="modal fade" >
+  <div class="modal-dialog "   style="margin:0;">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:950px;padding:15px;background-color:white;">
+      <div class="modal-header"  style="padding:0;background-color:#d98484">
+      <a  onclick="GNTViewer(6)"class="GNTHover hide" id="GNTHeader6" 
+      href="#" style="padding-left:10px;padding-top:15px;background-color:#FF9900;color:black;width:100%;text-align:left;">
+        <h1 >Home</h1>
+      </a>
+      <a  onclick="GNTViewer(16)"class="GNTHover hide" id="GNTHeader16" 
+      href="#" style="padding-left:10px;padding-top:15px;background-color:#FF9900;color:black;width:100%;text-align:left;">
+        <h1 >Blogs</h1>
+      </a>
+      </div>
+    <div class="modal-body" style="background-color:#fffafa;">   
+    
+      <div class="dropdown LocalGroups hide DelHeader DTGNT6">
+        <a style="font-size:30px;text-align:left;width:100%;" class="btn btn-primary" 
+        type="button" data-toggle="collapse" data-target="#Local15" 
+        aria-expanded="false" aria-controls="collapseExample">
+        <h1><strong>5.) w</strong></h1>
+        </a>
+        <div class="collapse" id="Local15">
+           <a  onclick="DelViewer(7,6)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >7.) w</h4></a>
+         <a  onclick="DelViewer(8,6)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >8.) w</h4></a>
+         <a  onclick="DelViewer(9,6)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >9.) w</h4></a>
+        </div>
+      </div>
+      <div class="dropdown LocalGroups hide DelHeader DTGNT16">
+        <a style="font-size:30px;text-align:left;width:100%;" class="btn btn-primary" 
+        type="button" data-toggle="collapse" data-target="#Local117" 
+        aria-expanded="false" aria-controls="collapseExample">
+        <h1><strong>17.) ww</strong></h1>
+        </a>
+        <div class="collapse" id="Local117">
+           <a  onclick="DelViewer(10,16)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >10.) w</h4></a>
+         <a  onclick="DelViewer(11,16)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >11.) w</h4></a>
+         <a  onclick="DelViewer(12,16)" class="btn btn-primary DelHov" href="#" style="padding-left:10px;background-color:#99DFFF;color:black;
+        width:100%;text-align:left;padding-left:60px;">
+        <h4 >12.) w</h4></a>
+        </div>
+      </div>
+  <div onclick="DelViewer(3,6)" class="LocalDHeader hide modal-header DelHov hide LDGNT6" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader33">
+        <h1 >3.) w</h1>
+      </div>
+  <div onclick="DelViewer(7,6)" class="LocalDHeader hide modal-header DelHov hide LDGNT6" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader37">
+        <h1 >7.) w</h1>
+      </div>
+  <div onclick="DelViewer(8,6)" class="LocalDHeader hide modal-header DelHov hide LDGNT6" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader38">
+        <h1 >8.) w</h1>
+      </div>
+  <div onclick="DelViewer(9,6 )" class="LocalDHeader hide modal-header DelHov hide LDGNT6 " href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader39">
+        <h1 >9.) w</h1>
+      </div>
+  <div onclick="DelViewer(10,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader310">
+        <h1 >10.) w</h1>
+      </div>
+  <div onclick="DelViewer(11,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader311">
+        <h1 >11.) w</h1>
+      </div>
+  <div onclick="DelViewer(12,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader312">
+        <h1 >12.) w</h1>
+      </div>
+  <div onclick="DelViewer(13,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader313">
+        <h1 >13.) w</h1>
+      </div>
+  <div onclick="DelViewer(14,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader314">
+        <h1 >14.) w</h1>
+      </div>
+  <div onclick="DelViewer(15,16)" class="LocalDHeader hide modal-header DelHov hide LDGNT16" href="#" style="padding-left:10px;padding-top:15px;
+      background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DemHeader315">
+        <h1 >15.) w</h1>
+      </div>
+    <div onclick="DelViewer(3,6)"class="DelHeader modal-header DelHov hide DTGNT6" href="#" style="padding-left:10px;padding-top:15px;
+        background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DelHeader33">
+          <h1 >3.) w</h1>
+        </div>
+    <div onclick="DelViewer(13,16)"class="DelHeader modal-header DelHov hide DTGNT16" href="#" style="padding-left:10px;padding-top:15px;
+        background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DelHeader313">
+          <h1 >13.) w</h1>
+        </div>
+    <div onclick="DelViewer(14,16)"class="DelHeader modal-header DelHov hide DTGNT16" href="#" style="padding-left:10px;padding-top:15px;
+        background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DelHeader314">
+          <h1 >14.) w</h1>
+        </div>
+    <div onclick="DelViewer(15,16)"class="DelHeader modal-header DelHov hide DTGNT16" href="#" style="padding-left:10px;padding-top:15px;
+        background-color:#d98484;color:black;width:100%;text-align:left;padding-left:10px;" id ="DelHeader315">
+          <h1 >15.) w</h1>
+        </div>
+      
+
+      <div class="modal-body hide All" id="DelModal3" style="background-color:#fffafa;"><h4><strong>Parties responsible for this Deliverable:</strong></h4>
+            <div class="dropdown">
+              <button style="font-size:22px;text-align:left;width:100%;" class="btn btn-primary " type="button" data-toggle="collapse" data-target="#Coll34" aria-expanded="false" aria-controls="collapseExample">
+              w
+              </button>
+              <div class="collapse" id="Coll34">
+                <div class="card card-body" style="padding-top:5px;padding-bottom:8px;">
+                  <strong>Job Title:</strong> UX Designer<br>
+                  <strong>Email:</strong> agyger@outlook.com<br>
+                  <strong>Phone Number:</strong> 301-540-0906<br>
+                </div>
+              </div>  
+            </div>
+            <div class="dropdown">
+              <button style="font-size:22px;text-align:left;width:100%;" class="btn btn-primary " type="button" data-toggle="collapse" data-target="#Coll318" aria-expanded="false" aria-controls="collapseExample">
+              kareem
+              </button>
+              <div class="collapse" id="Coll318">
+                <div class="card card-body" style="padding-top:5px;padding-bottom:8px;">
+                  <strong>Job Title:</strong> Friend<br>
+                  <strong>Email:</strong> agyger@outlook.com<br>
+                  <strong>Phone Number:</strong> ###-###-####<br>
+                </div>
+              </div>  
+            </div><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    <h4 style="float:right;clear:right;width:50%;"><strong>Scheduled Due Date:</strong><br>28/05/2019</h4>
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal7" style="background-color:#fffafa;"><h4><strong>Parties responsible for this Deliverable:</strong></h4>
+            <div class="dropdown">
+              <button style="font-size:22px;text-align:left;width:100%;" class="btn btn-primary " type="button" data-toggle="collapse" data-target="#Coll718" aria-expanded="false" aria-controls="collapseExample">
+              kareem
+              </button>
+              <div class="collapse" id="Coll718">
+                <div class="card card-body" style="padding-top:5px;padding-bottom:8px;">
+                  <strong>Job Title:</strong> Friend<br>
+                  <strong>Email:</strong> agyger@outlook.com<br>
+                  <strong>Phone Number:</strong> ###-###-####<br>
+                </div>
+              </div>  
+            </div><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal8" style="background-color:#fffafa;"><h4><strong>Parties responsible for this Deliverable:</strong></h4>
+            <div class="dropdown">
+              <button style="font-size:22px;text-align:left;width:100%;" class="btn btn-primary " type="button" data-toggle="collapse" data-target="#Coll818" aria-expanded="false" aria-controls="collapseExample">
+              kareem
+              </button>
+              <div class="collapse" id="Coll818">
+                <div class="card card-body" style="padding-top:5px;padding-bottom:8px;">
+                  <strong>Job Title:</strong> Friend<br>
+                  <strong>Email:</strong> agyger@outlook.com<br>
+                  <strong>Phone Number:</strong> ###-###-####<br>
+                </div>
+              </div>  
+            </div><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal9" style="background-color:#fffafa;"><h4><strong>Parties responsible for this Deliverable:</strong></h4>
+            <div class="dropdown">
+              <button style="font-size:22px;text-align:left;width:100%;" class="btn btn-primary " type="button" data-toggle="collapse" data-target="#Coll918" aria-expanded="false" aria-controls="collapseExample">
+              kareem
+              </button>
+              <div class="collapse" id="Coll918">
+                <div class="card card-body" style="padding-top:5px;padding-bottom:8px;">
+                  <strong>Job Title:</strong> Friend<br>
+                  <strong>Email:</strong> agyger@outlook.com<br>
+                  <strong>Phone Number:</strong> ###-###-####<br>
+                </div>
+              </div>  
+            </div><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal10" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal11" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal12" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal13" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal14" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+      
+
+      <div class="modal-body hide All" id="DelModal15" style="background-color:#fffafa;"><h4><strong>Scope Requirements satisfied by this Deliverable:</strong></h4> <a onclick="ReqViewer(2)" class="btn btn-primary ReqHover" href="#" style="padding-left:10px;
+          padding-bottom:10px;padding-top:10px;background-color:#e8dd67;color:black;width:100%;text-align:left;">
+          <h4 >1.1.) rw</h4></a>
+      <div style="border-bottom:solid 2px black;min-height:65px;">
+        
+        <h4 style="width:50%;float:left;"><strong>Deliverable Type: </strong><br>Content Deliverable</h4>    
+        </div>
+        <h3 style="margin:0;background-color:#d98484;border:solid 2px black;"><strong>Deliverable Description:</strong></h3>
+        <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;background-color:#fff5f5;">
+        
+        <p>w</p>
+        
+      </div>
+  </div> 
+  
+      
+    
+    
+      
+<div onclick="ReqViewer(2)" id="ReqHeader2" class="btn btn-primary ReqHover hide ReqHeader" href="#" style="white-space: normal; padding-left:30px;
+  padding-bottom:10px;padding-top:10px;background-color:#e8dd67;height:100%;color:black;width:100%;text-align:left;" ><h1 style="margin:0">1.) rw</h1></a>
+</div>
+    <div class="modal-body hide All"  id="ReqBody2" style="background-color:#fffafa;"><h4><strong>Scope Requirement serves the following Strategic Objective:</strong></h4> <a onclick="ObjViewer(1)" class="ObjHover" href="#" style="width:100%;">
+        <h4 style="padding-left:10px;background-color:#a3c09a;padding-bottom:10px;padding-top:10px;
+        color:black;width:100%;text-align:left;" class="ObjHover">1.) w</h4></a><h4><strong>Requirement Type: </strong><br></h4><h5 style="padding-left:10px;">Objective - What does the user want to accomplish?</h5>
+      <h3 style="margin:0;background-color:#e8dd67;border:solid 2px black;"><strong>Requirement Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#fffcdc">
+      
+      <p>rw</p>
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody3" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody4" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody5" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody6" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody7" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody8" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody9" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody10" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody11" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody12" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody13" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody14" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody15" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody16" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody17" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody18" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody1" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">1.) w</h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;">What do I want the website to offer?</h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      <p>w</p>
+      </div>
+    </div>
+  
+    
+
+    <div class="modal-body hide All"  id="ObjBody2" style="background-color:#fffafa;"><h1 style="padding-top:15px;padding-left:60px;
+      background-color:#a3c09a;color:black;width:100%;text-align:left;">1.) </h1>
+      <h4><strong>Objective Question: </strong><br></h4>
+      <h5 style="padding-left:10px;"></h5>
+      <h3 style="margin:0;background-color:#a3c09a;border:solid 2px black;"><strong>Objective Description:</strong></h3>
+      <div style="font-size:20px;border: solid black 2px;padding: 15px;padding-right: 25px;padding-left:10px;
+      background-color:#ecfdee">
+      
+      
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

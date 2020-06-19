@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+
+<link rel="stylesheet" type="text/css" href="MetaBetaV2.0.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- Include external CSS. -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+ 
+    <!-- Include Editor style. -->
+    <link href="Froala\css\froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="Froala\css\froala_style.min.css" rel="stylesheet" type="text/css" />
+  </head>
+ 
+  <body>
+ 
+    <!-- Include external JS libs. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+ 
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="Froala\js\froala_editor.pkgd.min.js"></script>
+ 
+    <!-- Initialize the editor. -->
+    <script> $(function() { $('.EditArea').froalaEditor() }); </script>
+
+<style>
+.EditArea{}
+.fr-wrapper{resize: vertical;height:450px;overflow:scroll;overflow-x:hidden;}
+</style>
+</head>
+<style>
+   #swapView{font-size:22px;background-color:#003faa;color:white;text-align:center;padding-top:20px;padding-bottom:20px;width:100%;text-decoration:underline;}
+   #swapView:hover {font-size:22px;background-color:white !important;color:#003faa !important;text-align:center;padding-top:20px;padding-bottom:20px;width:100%;}
+   #selecta:hover{background-color:orange;color:white;}
+   #selecta{padding-left:15px;padding-right:15px;padding-bottom:6px;padding-top:6px;width:100%;text-align:left;font-size:20px;}
+   .hide{display:none;}
+   .Show{display:block;}
+   #SwapToRow:hover{color:red !important;background-color:white !important;border:2px solid red;text-decoration:underline;}
+   #SwapToCol:hover{color:red !important;background-color:white !important;border:2px solid red;text-decoration:underline;}
+   .Selectors:hover{background-color:black !important;}
+   .Selectors{border:solid black 2px;font-size:18px;padding-top:8px !important;padding-bottom:8px !important;font-weight:450;}
+   .ObjSel1:hover{color:#a3c09a !important;border:solid 1px #a3c09a} 
+   .ReqSel1:hover{color:#e8dd67 !important;border:solid 1px #e8dd67;background:black;} 
+   .DelSel1:hover{color:#d98484 !important;border:solid 1px #d98484} 
+    a{margin:0;}
+    .ObjHeader:hover{color:#a3c09a !important;border:solid 1px #a3c09a !important;background-color:black !important;}
+    .ReqHeader:hover{color:#e8dd67 !important;border:solid 1px #e8dd67 !important;background-color:black !important;} 
+   .DelHeader:hover{color:#d98484 !important;border:solid 1px #d98484 !important;background-color:black !important;} 
+   .ObjHeader{height:100%;padding-top: 15px;padding-bottom:0;color:black !important;text-decoration:underline;}
+    .ReqHeader{height:100%;padding-top: 15px;padding-bottom:0;color:black !important;background:#e8dd67;text-decoration:underline;} 
+   .DelHeader{height:100%;padding-top: 15px;padding-bottom:0;color:black !important;text-decoration:underline;} 
+   .ActiveItemObj{color:#a3c09a !important;border:solid 1px #a3c09a !important;background-color:black !important;}
+   .ActiveItemReq{color:#e8dd67 !important;border:solid 1px #e8dd67 !important;background-color:black !important;}
+   .ActiveItemDel{color:#d98484 !important;border:solid 1px #d98484 !important;background-color:black !important;}
+   .scrollDiv{resize: vertical;border: 1px solid #222; padding: 10px;overflow-x:hidden;display: flex;padding-left:15px;width:100%;height:650px;float: left; display: inline;white-space: initial;overflow-wrap: break-word;max-width:100%;}
+   .scrollDiv1{resize: vertical;border: 1px solid #222;width: 500px; padding: 10px;overflow-x:hidden;display: flex;padding-left:15px;width:100%;float: left; display: inline;white-space: initial;overflow-wrap: break-word;max-width:100%;padding-right:20px;}
+
+</style>
+<script>
+function OBJHider(id)
+    {
+        var testarray = document.getElementsByClassName("SelectorsObj");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemObj');
+        }
+        var testarray = document.getElementsByClassName("SelectorsReq");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemReq');
+        }
+        var testarray = document.getElementsByClassName("SelectorsDel");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+        
+
+        var testarray = document.getElementsByClassName("SelectorsObj1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemObj');
+        }
+        var testarray = document.getElementsByClassName("SelectorsReq1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemReq');
+        }
+        var testarray = document.getElementsByClassName("SelectorsDel1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+        document.getElementById("SelObj1"+id).classList.add('ActiveItemObj');
+        document.getElementById("SelObj"+id).classList.add('ActiveItemObj');
+
+        var testarray = document.getElementsByClassName("ObjDesc");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('Show');
+            testarray[i].classList.remove('hide'); 
+            testarray[i].classList.add('hide');
+        }
+        var testarray2 = document.getElementsByClassName("ObjHeader");
+        for(var i = 0; i < testarray2.length; i++)
+        {
+            testarray2[i].classList.remove('Show');
+            testarray2[i].classList.remove('hide');
+            testarray2[i].classList.add('hide');
+        }
+        var testarray3 = document.getElementsByClassName("ReqSel");
+        for(var i = 0; i < testarray3.length; i++)
+        {
+            testarray3[i].classList.remove('Show');
+            testarray3[i].classList.remove('hide');
+            testarray3[i].classList.add('hide');
+        }
+        var testarray3 = document.getElementsByClassName("ReqSel"+ id);
+        for(var i = 0; i < testarray3.length; i++)
+        {
+            testarray3[i].classList.remove('Show');
+            testarray3[i].classList.remove('hide');
+            testarray3[i].classList.add('Show');
+        }
+        var testarray = document.getElementsByClassName("ReqDesc");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('Show');
+            testarray[i].classList.remove('hide'); 
+            testarray[i].classList.add('hide');
+        }
+        var testarray2 = document.getElementsByClassName("ReqHeader");
+        for(var i = 0; i < testarray2.length; i++)
+        {
+            testarray2[i].classList.remove('Show');
+            testarray2[i].classList.remove('hide');
+            testarray2[i].classList.add('hide');
+        }
+        var testarray3 = document.getElementsByClassName("DelSel");
+        for(var i = 0; i < testarray3.length; i++)
+        {
+            testarray3[i].classList.remove('Show');
+            testarray3[i].classList.remove('hide');
+            testarray3[i].classList.add('hide');
+        }
+        var element =  document.getElementById("ReqSel" + id);
+            if (typeof(element) != 'undefined' && element != null)
+            {
+            document.getElementById("ReqSel" + id).classList.add('Show');
+            document.getElementById("ReqSel" + id).classList.remove('hide');
+            }
+            var testarray = document.getElementsByClassName("DelDesc");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('Show');
+            testarray[i].classList.remove('hide'); 
+            testarray[i].classList.add('hide');
+        }
+        var testarray2 = document.getElementsByClassName("DelHeader");
+        for(var i = 0; i < testarray2.length; i++)
+        {
+            testarray2[i].classList.remove('Show');
+            testarray2[i].classList.remove('hide');
+            testarray2[i].classList.add('hide');
+        }
+
+        document.getElementById("HeaderOBJ" + id).classList.add('Show');
+        document.getElementById("HeaderOBJ" + id).classList.remove('hide');
+        document.getElementById("HeaderDesc" + id).classList.add('Show');
+        document.getElementById("HeaderDesc" + id).classList.remove('hide');   
+        document.getElementById("HeaderOBJ1" + id).classList.add('Show');
+        document.getElementById("HeaderOBJ1" + id).classList.remove('hide');
+        document.getElementById("HeaderDesc1" + id).classList.add('Show');
+        document.getElementById("HeaderDesc1" + id).classList.remove('hide'); 
+
+    }     
+function ReqHider(id){
+    var testarray = document.getElementsByClassName("ReqDesc");
+    for(var i = 0; i < testarray.length; i++)
+    {
+        testarray[i].classList.remove('Show');
+        testarray[i].classList.remove('hide'); 
+        testarray[i].classList.add('hide');
+    }
+    var testarray2 = document.getElementsByClassName("ReqHeader");
+    for(var i = 0; i < testarray2.length; i++)
+    {
+        testarray2[i].classList.remove('Show');
+        testarray2[i].classList.remove('hide');
+        testarray2[i].classList.add('hide');
+    }
+    var testarray3 = document.getElementsByClassName("DelSel" );
+    for(var i = 0; i < testarray3.length; i++)
+    {
+        testarray3[i].classList.remove('Show');
+        testarray3[i].classList.remove('hide');
+        testarray3[i].classList.add('hide');
+    }
+    var testarray3 = document.getElementsByClassName("DelSel" +id);
+    for(var i = 0; i < testarray3.length; i++)
+    {
+        testarray3[i].classList.remove('Show');
+        testarray3[i].classList.remove('hide');
+        testarray3[i].classList.add('Show');
+    }
+    var testarray = document.getElementsByClassName("DelDesc");
+    for(var i = 0; i < testarray.length; i++)
+    {
+        testarray[i].classList.remove('Show');
+        testarray[i].classList.remove('hide'); 
+        testarray[i].classList.add('hide');
+    }
+    var testarray2 = document.getElementsByClassName("DelHeader");
+    for(var i = 0; i < testarray2.length; i++)
+    {
+        testarray2[i].classList.remove('Show');
+        testarray2[i].classList.remove('hide');
+        testarray2[i].classList.add('hide');
+    }
+    var testarray = document.getElementsByClassName("SelectorsReq1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemReq');
+        }
+    var testarray = document.getElementsByClassName("SelectorsDel1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+    var testarray = document.getElementsByClassName("SelectorsReq");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemReq');
+        }
+    var testarray = document.getElementsByClassName("SelectorsDel");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+        document.getElementById("SelReq"+id).classList.add('ActiveItemReq');
+        document.getElementById("SelReq1"+id).classList.add('ActiveItemReq');
+
+    document.getElementById("HeaderReq" + id).classList.add('Show');
+    document.getElementById("HeaderReq" + id).classList.remove('hide');
+    document.getElementById("ReqDesc" + id).classList.add('Show');
+    document.getElementById("ReqDesc" + id).classList.remove('hide');   
+    
+    document.getElementById("ReqDesc1" + id).classList.add('Show');
+    document.getElementById("ReqDesc1" + id).classList.remove('hide');  
+    document.getElementById("HeaderReq1" + id).classList.add('Show');
+    document.getElementById("HeaderReq1" + id).classList.remove('hide');
+    } 
+
+function DelHider(id){
+    var testarray = document.getElementsByClassName("DelDesc");
+    for(var i = 0; i < testarray.length; i++)
+    {
+        testarray[i].classList.remove('Show');
+        testarray[i].classList.remove('hide'); 
+        testarray[i].classList.add('hide');
+    }
+    var testarray2 = document.getElementsByClassName("DelHeader");
+    for(var i = 0; i < testarray2.length; i++)
+    {
+        testarray2[i].classList.remove('Show');
+        testarray2[i].classList.remove('hide');
+        testarray2[i].classList.add('hide');
+    }
+    var testarray = document.getElementsByClassName("SelectorsDel");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+    document.getElementById("SelDel"+id).classList.add('ActiveItemDel');
+
+    var testarray = document.getElementsByClassName("SelectorsDel1");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove('ActiveItemDel');
+        }
+    document.getElementById("SelDel1"+id).classList.add('ActiveItemDel');
+    
+    document.getElementById("HeaderDel" + id).classList.add('Show');
+    document.getElementById("HeaderDel" + id).classList.remove('hide');
+    document.getElementById("DelDesc" + id).classList.add('Show');
+    document.getElementById("DelDesc" + id).classList.remove('hide');   
+    document.getElementById("HeaderDel1" + id).classList.add('Show');
+    document.getElementById("HeaderDel1" + id).classList.remove('hide');
+    document.getElementById("DelDesc1" + id).classList.add('Show');
+    document.getElementById("DelDesc1" + id).classList.remove('hide');   
+
+    }           
+function ColView(){
+    document.getElementById("ColView" ).classList.remove('hide');   
+    document.getElementById("ColView" ).classList.remove('Show');   
+    document.getElementById("ColView" ).classList.add('hide');     
+    document.getElementById("RowView" ).classList.remove('hide');   
+    document.getElementById("RowView" ).classList.remove('Show');   
+    document.getElementById("RowView" ).classList.add('Show');  
+    }       
+function RowView(){
+    document.getElementById("RowView" ).classList.remove('hide');   
+    document.getElementById("RowView" ).classList.remove('Show');   
+    document.getElementById("RowView" ).classList.add('hide');     
+    document.getElementById("ColView" ).classList.remove('hide');   
+    document.getElementById("ColView" ).classList.remove('Show');   
+    document.getElementById("ColView" ).classList.add('Show');  
+    }    
+                 
+</script>
+<body>  
+            
+<div class="container" style="padding-left:0;">
+    <div class="row">
+        <a style="width:100%;text-align:center;" type="button" data-toggle="collapse" data-target="#GlobalLocalCollapse"><h1>MetaBetaTest</h1></a>
+    </div>
+    <div class="collapse " id="GlobalLocalCollapse" style="padding:0;width:100%;" >
+        <div class="row">
+        
+                <div class="col-sm-6" style="padding:0;margin:0;">
+                    <div>
+                        <h4 style="margin:0 !important;color:white;background-color:black !important;">Global Navigation Tags:</h4>
+                    </div>
+                    <form name="CreateGlobalTag" action="Create Global Tag.php" method="post" >
+                        <label style="margin:0;font-size:16px;color:black !important;"><strong>Create a webpage to host deliverables:</strong></label><br>
+                        <input type="hidden" name="ObjectiveID" value="3">
+                        <input name="GlobalTagTitle" autocomplete="off" style="width:100%;" type="text"><br>
+                        <input type="submit" style="float:right;" value="Submit"><br><br>
+                    </form>
+                
+                    <label style="margin:0;font-size:16px;color:black !important;"><strong>Edit/ Remove Webpages:</strong></label><br>
+                    <div style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:450px;">
+                                               
+                                <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#679e97;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal40">
+                                    <strong>Main Dashboard</strong>
+                                </button><div class="modal" id="TagEditModal40">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Edit/Remove Global Navigation Tags</h3>
+                                    </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                    
+
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Global Nav Tag Title:</strong></label>
+                                            <form name="ModalEditGlobalNavTags" action="Edit_Global_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="40">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                <input name="GlobalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="Main Dashboard">
+                                                <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                </form> 
+
+                                        <br><br><br>
+                                        
+                                        <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Global.php" method="post">
+                                            <input type="hidden" name="AddGlobalTag" value="Main Dashboard">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><input type="hidden" name="AddGlobalTag" value="Main Dashboard">
+                                            
+                                            </div>
+                                            <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                        </form> 
+                                        <br>
+                                        
+                                        <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Global.php" method="post">
+                                        <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;"><div style="border:solid black 2px;background-color:#29A5FF">
+                                                        <input type="checkbox" name="AddLocalTagToGlobal47" value="47"><strong>Technical Shit</strong><br><div style="border-bottom:solid black 1px;padding-left:30px;background-color:#99DFFF;width:100%;">Back up client's UXD SQL Databases and Source Code</div><div style="border-bottom:solid black 1px;padding-left:30px;background-color:#99DFFF;width:100%;">Batch script that instances the application template source code as a client dedicated object</div><div style="border-bottom:solid black 1px;padding-left:30px;background-color:#99DFFF;width:100%;">How Alex's service works.</div></div><div style="border:solid black 2px;background-color:#29A5FF">
+                                                        <input type="checkbox" name="AddLocalTagToGlobal60" value="60"><strong>Footer</strong><br><div style="border-bottom:solid black 1px;padding-left:30px;background-color:#99DFFF;width:100%;">Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</div><div style="border-bottom:solid black 1px;padding-left:30px;background-color:#99DFFF;width:100%;">Modal Button Site Map Nodes</div></div><div style="background-color:#d98484;border:black 2px solid;"><input type="checkbox" name="RemoveDeliverable122" value="122"><strong>Primary Nav Bar</strong></div>
+                                            </div>
+                                            <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                        </form> 
+                                    </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                    </div>
+                                </div>                           
+                                <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#679e97;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal64">
+                                    <strong>Key-Legend Modal Page</strong>
+                                </button><div class="modal" id="TagEditModal64">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Edit/Remove Global Navigation Tags</h3>
+                                    </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                    
+
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Global Nav Tag Title:</strong></label>
+                                            <form name="ModalEditGlobalNavTags" action="Edit_Global_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="64">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                <input name="GlobalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="Key-Legend Modal Page">
+                                                <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                </form> 
+
+                                        <br><br><br>
+                                        
+                                        <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Global.php" method="post">
+                                            <input type="hidden" name="AddGlobalTag" value="Key-Legend Modal Page">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><input type="hidden" name="AddGlobalTag" value="Key-Legend Modal Page">
+                                            
+                                            </div>
+                                            <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                        </form> 
+                                        <br>
+                                        
+                                        <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Global.php" method="post">
+                                        <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;">
+                                            </div>
+                                            <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                        </form> 
+                                    </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                    </div>
+                                </div>                           
+                                <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#679e97;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal67">
+                                    <strong>lol</strong>
+                                </button><div class="modal" id="TagEditModal67">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Edit/Remove Global Navigation Tags</h3>
+                                    </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                    
+
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Global Nav Tag Title:</strong></label>
+                                            <form name="ModalEditGlobalNavTags" action="Edit_Global_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="67">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                <input name="GlobalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="lol">
+                                                <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                </form> 
+
+                                        <br><br><br>
+                                        
+                                        <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Global.php" method="post">
+                                            <input type="hidden" name="AddGlobalTag" value="lol">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><input type="hidden" name="AddGlobalTag" value="lol">
+                                            
+                                            </div>
+                                            <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                        </form> 
+                                        <br>
+                                        
+                                        <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Global.php" method="post">
+                                        <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;"><div style="background-color:#d98484;border:black 2px solid;"><input type="checkbox" name="RemoveDeliverable3" value="3"><strong>Setup a local WAMP Server to host database/ server-side rendering.</strong></div><div style="background-color:#d98484;border:black 2px solid;"><input type="checkbox" name="RemoveDeliverable79" value="79"><strong>User is responsible for tagging urls and lists via Obj/Req/Del creation</strong></div><div style="background-color:#d98484;border:black 2px solid;"><input type="checkbox" name="RemoveDeliverable83" value="83"><strong>Floara WYSIWYG HTML Editor for ORD textarea fields.</strong></div><div style="background-color:#d98484;border:black 2px solid;"><input type="checkbox" name="RemoveDeliverable121" value="121"><strong>Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</strong></div>
+                                            </div>
+                                            <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                        </form> 
+                                    </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                    </div>
+                                </div>                           
+                                <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#679e97;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal75">
+                                    <strong>Working with Alex</strong>
+                                </button><div class="modal" id="TagEditModal75">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Edit/Remove Global Navigation Tags</h3>
+                                    </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                    
+
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Global Nav Tag Title:</strong></label>
+                                            <form name="ModalEditGlobalNavTags" action="Edit_Global_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="75">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                <input name="GlobalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="Working with Alex">
+                                                <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                </form> 
+
+                                        <br><br><br>
+                                        
+                                        <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Global.php" method="post">
+                                            <input type="hidden" name="AddGlobalTag" value="Working with Alex">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><input type="hidden" name="AddGlobalTag" value="Working with Alex">
+                                            
+                                            </div>
+                                            <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                        </form> 
+                                        <br>
+                                        
+                                        <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Global.php" method="post">
+                                        <input type="hidden" name="ObjectiveID" value="3"> 
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;">
+                                            </div>
+                                            <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                        </form> 
+                                    </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                    </div>
+                                </div>            </div></div>
+            <div class="col-sm-6" style="padding:0;">
+            <div>
+                <h4 style="margin:0 !important;color:white;background-color:black !important;">Local Navigation Tags:</h4>
+            </div>
+        <form style="margin:0 !important;color:white;background-color:white !important;" name="CreateLocalTag" action="Create Local Tag.php" method="post" >
+            <label style="margin:0;font-size:16px;color:black !important;"><strong>Create a group name for deliverables:</strong></label><br>
+                <input name="LocalTagTitle" autocomplete="off" style="width:100%;" type="text"><br>
+                <input type="hidden" name="ObjectiveID" value="3">
+                <input type="submit" style="float:right;" value="Submit"><br><br>
+        </form>
+        
+            <label style="margin:0;width:100%;font-size:16px;color:black !important;background-color:white;"><strong>Edit/ Remove Local Groupings:</strong></label><br>
+            <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:450px;">
+                                           
+                            <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#29A5FF;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal47">
+                                <strong>Technical Shit</strong>
+                            </button><div class="modal" id="TagEditModal47">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Edit/Remove Local Navigation Tags</h3>
+                                        </div>
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                        
+
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Local Nav Tag Title:</strong></label>
+                                                <form name="ModalEditLocalNavTags" action="Edit_Local_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="47">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                    <input type="hidden" name="LocalTagEdit" value="47">
+                                                    <input name="LocalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="Technical Shit">
+                                                    <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                    <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                    </form> 
+
+                                            <br><br><br>
+                                            
+                                            <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Local.php" method="post">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Local Nav Tag Group:</strong></label><br>
+                                                <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;">
+                                                <input type="hidden" name="AddLocalTag" value="Technical Shit"><input type="hidden" name="AddLocalTag" value="Technical Shit">
+                                                <div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal3" value="3"><strong>Setup a local WAMP Server to host database/ server-side rendering.</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal122" value="122"><strong>Primary Nav Bar</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal79" value="79"><strong>User is responsible for tagging urls and lists via Obj/Req/Del creation</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal83" value="83"><strong>Floara WYSIWYG HTML Editor for ORD textarea fields.</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal121" value="121"><strong>Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</strong></div>
+                                                </div>
+                                                <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                            </form> 
+                                            <br>
+                                            
+                                            <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Local.php" method="post">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                                <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><div style="border:black 2px solid;background-color:#99DFFF;"><input type="checkbox" name="RemoveDeliverable45" value="45"><strong>Back up client's UXD SQL Databases and Source Code</strong></div><div style="border:black 2px solid;background-color:#99DFFF;"><input type="checkbox" name="RemoveDeliverable62" value="62"><strong>Batch script that instances the application template source code as a client dedicated object</strong></div><div style="border:black 2px solid;background-color:#99DFFF;"><input type="checkbox" name="RemoveDeliverable74" value="74"><strong>How Alex's service works.</strong></div>
+                                                </div>
+                                                <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                            </form> 
+                                        </div>
+                                            
+                                        
+                                            
+                                        </div>
+                                    </div>
+                            </div>                           
+                            <button style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#29A5FF;padding-left:30px;" type="button" data-toggle="modal" data-target="#TagEditModal60">
+                                <strong>Footer</strong>
+                            </button><div class="modal" id="TagEditModal60">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Edit/Remove Local Navigation Tags</h3>
+                                        </div>
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                        
+
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Local Nav Tag Title:</strong></label>
+                                                <form name="ModalEditLocalNavTags" action="Edit_Local_Navigation_Tag.php" method="post">
+                                                <input type="hidden" name="idDelReq" value="60">
+                                                <input type="hidden" name="ObjectiveID" value="3">  
+                                                    <input type="hidden" name="LocalTagEdit" value="60">
+                                                    <input name="LocalNavTagEdit" style="width:100%;" type="text" autocomplete="off" value="Footer">
+                                                    <input style="float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                    <input style="float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" /></form>
+                                                    </form> 
+
+                                            <br><br><br>
+                                            
+                                            <form style="margin-top:7px;" name="DeliverableModalForm" action="Add_Deliverable_Local.php" method="post">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Add Selected Deliverables To Local Nav Tag Group:</strong></label><br>
+                                                <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;border:black 2px solid;">
+                                                <input type="hidden" name="AddLocalTag" value="Footer"><input type="hidden" name="AddLocalTag" value="Footer">
+                                                <div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal3" value="3"><strong>Setup a local WAMP Server to host database/ server-side rendering.</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal122" value="122"><strong>Primary Nav Bar</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal79" value="79"><strong>User is responsible for tagging urls and lists via Obj/Req/Del creation</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal83" value="83"><strong>Floara WYSIWYG HTML Editor for ORD textarea fields.</strong></div><div style="border:black 2px solid;background-color:#d98484;"><input type="checkbox" name="AddDeliverableLocal121" value="121"><strong>Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</strong></div>
+                                                </div>
+                                                <input style="float:right;color:white;background-color:green;" type="submit" name="actionR" value="ADD" />
+                                            </form> 
+                                            <br>
+                                            
+                                            <form style="margin-top:7px;" name="RemoveModalForm" action="Remove_Deliverable_Local.php" method="post">
+                                            <input type="hidden" name="ObjectiveID" value="3"> 
+                                                <label style="margin:0;font-size:16px;color:black;"><strong>Remove Selected Deliverables From Web Page Tag:</strong></label><br>
+                                                <div  style="overflow-y:scroll; overflow-x:hidden;background-color:#cccccc;padding:0 !important;height:250px;"><div style="border:black 2px solid;background-color:#99DFFF;"><input type="checkbox" name="RemoveDeliverable59" value="59"><strong>Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</strong></div><div style="border:black 2px solid;background-color:#99DFFF;"><input type="checkbox" name="RemoveDeliverable63" value="63"><strong>Modal Button Site Map Nodes</strong></div>
+                                                </div>
+                                                <input style="float:right;color:white;background-color:red;" type="submit" name="actionR" value="REMOVE" />
+                                            </form> 
+                                        </div>
+                                            
+                                        
+                                            
+                                        </div>
+                                    </div>
+                            </div>  
+                    </div>
+        
+                </div>
+    
+        </div>
+
+    </div>
+    <div class="row">
+                <div class="col col-sm-4" style="border:solid black 2px;background-color:#a3c09a;padding:0;">
+                <button style="height:100%;font-size:35px;width:100%;text-align:left;" type="button" data-toggle="modal" data-target="#NewOjective">
+                    <strong>New Objective:</strong>
+                </button>
+                <div class="modal" id="NewOjective">
+                    <div style="max-width:1200px !important;" class="modal-dialog">
+                        <div class="modal-content">
+                                                    
+                            <div class="modal-header">
+                                <h3 class="modal-title">Create a New Objective:</h3>
+                            </div>
+                                            
+                                                        <!-- Modal body -->
+                            <div class="modal-body">
+                                <form  style="width:100%;" name="UserObjForm" onsubmit="return validateU()" action="Submit User Objective.php" method="post" >
+                                <input type="hidden" name="ObjectiveSequencer" value="7">                                    <div style="background-color:#b6a9b0"><h4 style="margin:0 !important;width:100%;color:black !important;">User/ Business Project Needs:</h4>
+                                        <select  style="width:100%;" name="Strat_User_Questions">
+                                            <option style="margin-top:100px;" value="How is the Need/ Problem/ Opportunity Defined by the prospect?">How is the Need/ Problem/ Opportunity Defined by the user?</option>
+                                            <option value="Prospects' product related search-engine behavior:">Users' product related search-engine behavior?</option>
+                                            <option value="Concerns/ Questions the prospect will have about your product?">Concerns/ Questions the prospect will have about your product?</option>
+                                            <option value="What does the prospect desire?">What does the user desire?</option>
+                                            <option value="What does the user need to accomplish using this application?">What does the user need to accomplish using this application?</option>
+                                            <option value="Who is going to be using this application?">Who is going to be using this application?</option>
+                                            <option value="What do I want the website to offer?">What do I want the project to offer?</option>
+                                            <option value="What do I want the project to accomplish?">What do I want the project to accomplish?</option>
+                                            <option value="Message or Information I wish to convey?">Message, offer, or content the website should convey?</option>
+                                            <option value="Who's typically going to visit the site? What are they expecting to accomplish?">Who's typically going to visit the site? What are they expecting to accomplish?</option>
+                                        </select>
+                                        <label style="margin:0;font-size:19px;color:black !important;"><strong>Objective Description:</strong></label><br>
+                                        <textarea  class="EditArea" style="width:100%;" cols="85" rows="5" name="Strat_UserNeedDescription" style="resize:vertical" autocomplete="off"></textarea><br>
+                                        <label style="margin:0;font-size:19px;color:black !important;"><strong>Objective Title:</strong></label><br><input name="Strat_UserNeedTitle" autocomplete="off" style="width:100%;" type="text"><br>
+                                        <label style="margin:0;font-size:19px;color:black !important;"><strong>Priority:</strong></label>
+                                        <select name="Strat_User_Priority">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                        </select>
+                                        <input type="hidden" name="idDel0" value="3">
+                                        <input type="submit" style="float:right;" value="Submit"><br><br>
+                                    </div>
+                                </form>
+                                 
+                            </div>       
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col col-sm-8" style="border:solid black 2px;background-color:#a3c09a;padding:0;">
+                    <button class="ObjHeader" style="height:100%;overflow: hidden;text-align:left;width:100%;text-decoration:underline;border:solid black 2px;background-color:#a3c09a" type="button" data-toggle="modal" data-target="#myModal5">
+                                    <h2 style="float:left;">3.) Application Output</h2>
+                                          </button>
+                                <div class="modal" id="myModal5">
+                                    <div style="max-width:1200px !important;" class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                            <h4 style="color: black !important;class="modal-title">Edit Strategic Objective:</h4>
+                                            <button type="button" class="close" data-dismiss="modal">
+                                            </button>
+                                            </div>
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body">                                                               
+                                            <form name="Modalform" action="Delete_Strategy_Goal.php" method="post">
+                                            <input style="width:50%;height:50px;clear:left;float:left;color:white;background-color:red;" type="submit" name="action" value="Delete" />
+                                            <input style="width:50%;height:50px;float:right;color:white;background-color:blue;" type="submit" name="action" value="Update" />
+                                            <h5><strong>Original Question:</strong><br>What do I want the project to accomplish?</h5>
+                                            <input type="hidden" name="idDel" value="5">
+                                            <label><strong>Priority:</strong></label><br>
+                                            <select name="EditPriority">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select><br>
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Objective Title:</strong></label><input name="EditTitle" style="width:100%;" type="text" autocomplete="off" value="Application Output">
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Objective Description:</strong></label><textarea  class="EditArea"  rows="5" name="EditDescription" style="resize:vertical;width:100%;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></textarea>
+                                            
+                                            
+                                            </form>
+                                            </div>
+                                            
+                                        </div>
+                                        </div>
+                                    </div>                </div>
+
+
+    </div>
+    <div class="row" >
+                <div class="col col-sm-4" style="border:solid 2px black;padding:0;min-height:150px;background-color:#e3f8dd">
+                    <div style="overflow:scroll;overflow-x:hidden;padding:0;min-height:250px;height:100%;">            
+                    <div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj13' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=1'>1.) I am the user.</a></div><div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj14' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=2'>2.) What I need to accomplish with this application.</a></div><div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj15' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3'>3.) Application Output</a></div><div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj145' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=4'>4.) We need to address these common concerns for small business owners</a></div><div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj168' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=5'>5.) a</a></div><div class='ObjSel1' style='width:100%;padding:0;'><a id='SelObj170' type='button' class='Selectors SelectorsObj1 ObjSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=6'>6.) 2</a></div>                    </div>
+                </div>
+                <div class="col col-sm-8" style="border:solid black 2px;padding:0;">
+                    <div class='ObjDesc' style='padding:0;background-color:white;' id='HeaderDesc15'><h3  style='padding-left:15px;'>What do I want the project to accomplish?</h3><h5  style='padding-left:15px;'>Application Output</h5><div class='scrollDiv1'><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div></div>                </div>
+    </div>
+
+
+
+    <div class="row">
+                <div class="col col-sm-4" style="border:solid black 2px;background-color:#e8dd67;padding:0 !important;">
+                <button style="height:100%;font-size:35px;;text-align:left;width:100%;" type="button" data-toggle="modal" data-target="#NewRequirement">
+                    <strong>New Requirement:</strong>
+                </button>
+                <div class="modal" id="NewRequirement">
+                    <div style="max-width:1200px !important;" class="modal-dialog">
+                        <div class="modal-content">
+                                                    
+                            <div class="modal-header">
+                                <h3 class="modal-title">Define a New Requirement:</h3>
+                            </div>
+                                            
+                                                        <!-- Modal body -->
+                            <div class="modal-body">
+                            <form name="RequirementForm" action="Submit Requirement.php"style="background-color:#9b88b8" method="post" >
+                                <div style="padding-bottom:30px;">
+                                
+                                    <input type="hidden" name="idDel10" value="3 ">
+                                    <label style="margin:0;font-size:16px;"><strong>Requirement Title:</strong></label><br><input name="RequirementTitle" style="width:100%;" type="text" autocomplete="off"><br>
+                                    <label style="margin:0;font-size:16px;"><strong>Requirement Type:</strong></label>
+                                    <select name="RequirementType" style="width:100%;margin:0;margin-top:5px;">
+                                            <option value="Objective - What does the user want to accomplish?">"Objective" - What does the user want to accomplish?</option>
+                                            <option value="Functional - What does the user need to do in order reach their objective?">"Functional" - What does the user need to do in order reach their objective?</option>
+                                            <option value="Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?">"Technical" - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</option>
+                                            <option value="BusinessRules -   What external constraints does the project need to abide by? (legal, contractual, etc)">"BusinessRules" -   What external constraints does the project need to abide by? (legal, contractual, etc)</option>
+                                    </select>
+                                    <label style="margin:0;font-size:16px;"><strong>Description:</strong></label><br>
+                                    <textarea  class="EditArea" cols="85" style="height:900px;width:100%;" rows="5" name="RequirementDescription" style="resize:vertical;width:100%;" autocomplete="off"></textarea><br>
+                                    <input type="submit" style="float:right;" value="Submit">
+                                </div>
+                            </form>
+                            </div>       
+                        </div>
+
+                    </div>
+            </div>
+                </div>
+                <div class="col col-sm-8" style="border:solid black 2px;background-color:#e8dd67;padding:0;">
+                    <button style="float:left;width:100%;text-align:left;" class="ReqHeader" type="button" data-toggle="modal" data-target="#ReqEditModal26"><h2>2.) I need to communicate UXD info generated, via site map</h2></button>
+                                    <div class="modal" id="ReqEditModal26">
+                                        <div style="max-width:1200px !important;" class="modal-dialog">
+                                        <div class="modal-content">
+                                            
+                                            <div class="modal-header">
+                                                <h3 class="modal-title">Edit/Remove Requirement:</h3>
+                                            </div>
+                                                
+                                                <!-- Modal body -->
+                                            <div class="modal-body">
+                                                
+                                                <form name="ModalformReqEdit" action="Edit_Requirement.php" method="post">
+                                                <input style="width:50%;height:50px;float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" />
+                                                        <input style="width:50%;height:50px;float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" />
+                                                    <label style="margin:0;margin-top:15px;"><strong>Reassign Requirement:</strong></label>
+    
+                                                    <select name="StrategyObjectiveID" style="width:100%;max-height:50px;overflow:scroll;">
+                                                    
+                                                    <option style="background-color:#8d9390;" value=""></option><option value="1">1) I am the user.</option>
+                                                            <option value="2">2) What I need to accomplish with this application.</option>
+                                                            <option value="3">3) Application Output</option>
+                                                            <option value="4">4) We need to address these common concerns for small business owners</option>
+                                                            <option value="5">5) a</option>
+                                                            <option value="6">6) 2</option>
+                                                            </select>
+                                                   
+                                                        <label><strong>Requirement Type:<br></strong>Functional - What does the user need to do in order reach their objective?</label><br>
+                                                        <input type="hidden" name="ObjId" value="3">
+                                                        <input type="hidden" name="ReqID" value="26">
+                                                        <input type="hidden" name="ReqId" value="26">
+                                                        <input type="hidden" name="ActiveObj" value="3">
+                                                        <label style="margin:0;font-size:16px;color:black;"><strong>Requirement Title:</strong></label><input name="EditReqTitle" style="width:100%;" type="text" autocomplete="off" value="I need to communicate UXD info generated, via site map">
+                                                        <label style="margin:0;font-size:16px;color:black;"><strong>Requirement Description:</strong></label><textarea  class="EditArea" style="width:100%;height:450px;"  cols="63" rows="5" style="width:100%;"  name="RequirementDescription" style="resize:vertical" autocomplete="off"><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></textarea>
+                                                        
+                                                        
+                                                </form>
+                                            </div>
+                                                
+                                            
+                                                
+                                        </div>
+                                        </div>
+                                    </div>                </div>
+
+
+    </div>
+    <div class="row" >
+        <div class="col col-sm-4" style="border:solid 2px black;padding:0;min-height:150px;background-color:#fffcdc;">
+                    <div style="overflow:scroll;overflow-x:hidden;padding:0;min-height:250px;height:100%;">            
+                    <div id='ReqSel5' class='ReqSel ReqSel5' style='width:100%;padding:0;'><a id='SelReq131' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=31' class='SelectorsReq1 Selectors ReqSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>1.) Application's Generated Documents must be list and href Friendly</a></div><div id='ReqSel5' class='ReqSel ReqSel5' style='width:100%;padding:0;'><a id='SelReq126' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=26' class='SelectorsReq1 Selectors ReqSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>2.) I need to communicate UXD info generated, via site map</a></div><div id='ReqSel5' class='ReqSel ReqSel5' style='width:100%;padding:0;'><a id='SelReq123' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=23' class='SelectorsReq1 Selectors ReqSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>3.) Generate a Key legend for each Web page's Wire frame.</a></div><div id='ReqSel3' class='ReqSel ReqSel3' style='width:100%;padding:0;'><a id='SelReq164' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=64' class='SelectorsReq1 Selectors ReqSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>4.) Primary Navigation Bar</a></div>                    </div>
+                </div>
+                <div class="col col-sm-8" style="border:solid black 2px;padding:0;background-color:white;">
+                    <div class='ReqDesc' style='padding:0;' id='ReqDesc126'><h3  style='padding-left:15px;'>Functional - What does the user need to do in order reach their objective?</h3><h5  style='padding-left:15px;'>I need to communicate UXD info generated, via site map</h5><div class='scrollDiv1'><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></div></div>                </div>
+
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col col-sm-4" style="border:solid black 2px;background-color:#d98484;padding:0px !important;">
+        <button style="height:100%;font-size:35px;text-align:left;width:100%;" type="button" data-toggle="modal" data-target="#NewDeliverable">
+                    <strong>Create a Deliverable for this Objective:</strong>
+                </button>
+                <div class="modal" id="NewDeliverable">
+                    <div style="max-width:1200px !important;" class="modal-dialog">
+                        <div class="modal-content">
+                                                    
+                            <div class="modal-header">
+                                <h3 class="modal-title">Create a New Deliverable:</h3>
+                            </div>
+                                            
+                                                        <!-- Modal body -->
+                            <div class="modal-body">
+                            <form name="DeliverableForm" action="Submit Deliverable.php" method="post" >
+                                <div style="background-color:#679e97"><h4 style="margin:0 !important;color:black !important;">Define a Deliverable:</h4>
+                                    <label style="color:white !important;margin:0;margin-top:15px;"><strong >Which requirement is this deliverable tailored for?</strong></label>
+                                    
+                                    
+                                    
+                                    
+                                            <label style="margin:0;font-size:16px;color:white !important;"><strong>Type of Deliverable:</strong></label><br>
+                                            <input type="hidden" name="idDel4" value="3">
+                                            <input type="hidden" name="RequirementDeliverable" value="26">  
+                                                
+                                    <select style="width:100%;"name="DeliverableType">
+                                        <option value="Content Deliverable">Content Deliverable</option>
+                                        <option value="Project Functionality">Project Feature Proposal</option>
+                                        <option value="General Solution">General Solution</option>
+                                    
+                                    </select>
+                                    <label style="margin:0;font-size:16px;color:white !important;"><strong>Describe the Core Idea:</strong></label><br>
+                                    <textarea class="EditArea" cols="85" rows="5" name="Core_Idea" style="resize:vertical;width:100%;" autocomplete="off"></textarea><br>
+                                    <label style="margin:0;font-size:16px;color:white !important;"><strong>Title this Deliverable:</strong></label><br>
+                                    <input name="DeliverableTitle" autocomplete="off" style="width:100%;" type="text"><br>
+                                    <label style="margin:0;font-size:16px;color:white !important;"><strong>How are we going to deliver/ display this content?</strong></label><br>
+                                    <textarea  class="EditArea" cols="85" rows="5" name="DeliveryMethod" style="resize:vertical;width:100%;" autocomplete="off"></textarea><br>
+                                    
+                                    <input type="submit" style="float:right;" value="Submit"><br><br>
+                                </div>
+                            </form> 
+                            </div>       
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+                <div class="col col-sm-8" style="border:solid black 2px;background-color:#d98484;padding:0;">
+                <button class="DelHeader" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" type="button" data-toggle="modal" data-target="#DeliveryEditModal121">
+                                    <h2 style="margin:0">2.) Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</h2>
+                                </button>
+                                <div class="modal" id="DeliveryEditModal121">
+                                <div class="modal-dialog" style="max-width:1200px !important;">
+                                <div class="modal-content ">
+                                
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Edit/Remove Deliverable</h3>
+                                </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    
+                                        
+                                        <form name="DeliverableModalForm" action="Edit_Deliverable.php" method="post">
+                                        <input style="width:50%;height:50px;float:left;color:white;background-color:red;" type="submit" name="actionR" value="Delete" />
+                                        <input style="width:50%;height:50px;float:right;color:white;background-color:blue;" type="submit" name="actionR" value="Update" /><br><br>
+                                            <h3>I need to communicate UXD info generated, via site map</h3></label><div class="scrollDiv1"><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></div>
+                                            <br><h3><strong>General Solution:</strong></h3>
+                                            <input type="hidden" name="idDelReq" value="121">
+                                            <input type="hidden" name="actObj" value="26">
+                                            <input type="hidden" name="idDelReq3" value="121">
+                                            <input type="hidden" name="ReqSeqID" value="2">
+                                            <input type="hidden" name="idDelReq2" value="5">
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Delivery Title:</strong></label><input style="width:100%;" name="DeliverableTitle" style="width:100%;" type="text" autocomplete="off" value="Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags">
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Core Idea:</strong></label><textarea  class="EditArea" style="width:100%;" cols="63" rows="5" name="DeliverableCore" style="resize:vertical" autocomplete="off"><p>The Site Map will need to be generated by three documents:</p><ol><li>The saved HTML document of generateSiteMap.php&nbsp;</li><li>An Edraw html export, that has all of the GlobalNavTags nodes pre-populated&nbsp;</li><li>A Batch script that will...<ol><li>Find the modal buttons from the generateSiteMap.html</li><li>match them to their corresponding Edraw nodes within the Edraw sitemap html export</li><li>wrap the Edraw nodes with their modal button tags</li><li>It will also append all hidden modal buttons to the Edraw html export </li></ol></li></ol></textarea>
+                                            <label style="margin:0;font-size:16px;color:black;"><strong>Delivery Method:</strong></label><textarea  class="EditArea" style="width:100%;" cols="63" rows="5" name="DeliverableDelivery" style="resize:vertical" autocomplete="off"></textarea>
+                                            
+                                            
+                                        </form>
+                                    </div>
+                                    
+                                
+                                    
+                                </div>
+                                </div>
+                            </div><
+        </div>
+
+
+    </div>
+    <div class="row" >
+                <div class="col col-sm-4" style="border:solid 2px black;padding:0;min-height:150px;">
+                    <div style="overflow:scroll;overflow-x:hidden;padding:0;min-height:250px;height:100%;background-color:#fff5f5">            
+                    <div id='DelSel26' class='DelSel DelSel26' style='width:100%;padding:0;'><a id='SelReq163' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=26&activeDeliverable=63' class='SelectorsDel1 Selectors DelSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>1.) Modal Button Site Map Nodes</a></div><div id='DelSel26' class='DelSel DelSel26' style='width:100%;padding:0;'><a id='SelReq1121' type='button' href='http://localhost/MetaBetaTest/MetaBetaV3.0.php?activeObjective=3&activeRequirement=26&activeDeliverable=121' class='SelectorsDel1 Selectors DelSel1' style='text-align:left;padding:0;padding-left:15px;width:100%;'>2.) Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</a></div>                    </div>
+                </div>
+                <div class="col col-sm-8" style="border:solid black 2px;padding:0;background-color:white;">
+                        <div class='DelDesc ' style='padding:0;' id='DelDesc1121'><h3 style='padding-left:15px;'>General Solution:</h3><h5 style='padding-left:15px;'>Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</h5><div class='scrollDiv1'><p>The Site Map will need to be generated by three documents:</p><ol><li>The saved HTML document of generateSiteMap.php&nbsp;</li><li>An Edraw html export, that has all of the GlobalNavTags nodes pre-populated&nbsp;</li><li>A Batch script that will...<ol><li>Find the modal buttons from the generateSiteMap.html</li><li>match them to their corresponding Edraw nodes within the Edraw sitemap html export</li><li>wrap the Edraw nodes with their modal button tags</li><li>It will also append all hidden modal buttons to the Edraw html export </li></ol></li></ol></div></div>                </div>
+                
+                </div> 
+                <div class="row" >
+                    <a class="col col-sm-3" style="border:solid 2px black;min-height:150px;Text-align:center;font-size:22px;" data-toggle="modal" data-target="#SelectAWireFrameModal" style="height:100%; width:100%;">Generate Wire Frames</a>
+                    <div class="modal" id="SelectAWireFrameModal">
+                                <div class="modal-dialog" style="max-width:1200px !important;">
+                                <div class="modal-content ">
+                                
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Generate a Wire frame for which of the following Web Pages:</h3>
+                                </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    
+                                    <a href="generateWireFrame.php?activeWebPage=40" style="font-size:30px;" >Main Dashboard</a><br><a href="generateWireFrame.php?activeWebPage=64" style="font-size:30px;" >Key-Legend Modal Page</a><br><a href="generateWireFrame.php?activeWebPage=67" style="font-size:30px;" >lol</a><br><a href="generateWireFrame.php?activeWebPage=75" style="font-size:30px;" >Working with Alex</a><br>                           
+                                    </div>
+                                    
+                                
+                                    
+                                </div>
+                                </div>
+                    </div>
+                    <a class="col col-sm-3" style="border:solid 2px black;min-height:150px;Text-align:center;font-size:22px;" href="GenerateSiteMapNodes.php" target="_blank" style="height:100%; width:100%;">Generate Site Map</a>
+
+                    <a class="col col-sm-3" style="border:solid 2px black;min-height:150px;Text-align:center;font-size:22px;" href="GenerateORDcol.2.php" target="_blank" style="height:100%; width:100%;">Generate O.R.D. Col/View</a>
+
+                    <a class="col col-sm-3" style="border:solid 2px black;min-height:150px;Text-align:center;font-size:22px;" href="testlist.php" target="_blank" style="height:100%; width:100%;">Generate O.R.D. Table of Contents</a>
+
+    </div>  
+    </div>  
+     
+    </div> 
+
+     
+</div>       
+
+
+
+
+
+
+</body>
+</html>

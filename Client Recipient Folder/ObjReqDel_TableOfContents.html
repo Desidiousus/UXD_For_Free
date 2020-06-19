@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project Outline</title>
+
+<!-- Jquery CDN and Local JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+<!-- BootStrap CDN and Local CSS --> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link href="BootStrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- BootStrap CDN and Local JS --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="BootStrap\js\bootstrap.min.js"></script>
+
+<style>
+   #swapView{font-size:22px;background-color:#003faa;color:white;text-align:center;padding-top:20px;padding-bottom:20px;width:100%;text-decoration:underline;}
+   #swapView:hover {font-size:22px;background-color:white !important;color:#003faa !important;text-align:center;padding-top:20px;padding-bottom:20px;width:100%;}
+   #selecta:hover{background-color:orange;color:white;}
+   #selecta{padding-left:15px;padding-right:15px;padding-bottom:6px;padding-top:6px;width:100%;text-align:left;font-size:20px;}
+   .ordered {width:100%;}
+   li {width:100%;}
+   .ordered {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol > .listed {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol > .listed:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;    
+}
+
+.listed ol > .listed {
+  margin: 0;
+}
+
+.listed ol > .listed:before {
+  content: counters(item, ".") " ";
+  width:60px;
+}
+#TiCToK:hover{color:red !important;background:white !important;}
+</style>
+</head>
+<div class="navbar  "  style="padding:0;position:fixed;z-index:11;bottom:0;width:100%;">
+                <button id="TiCToK" style="width:100%;margin:0;padding:0;font-size:30px;text-decoration:underline;float:right;color:white;background-color:red;" type="button" data-toggle="collapse" data-target="#ToC">
+                    <strong style="width:100%;">TABLE OF CONTENTS</strong>
+                </button>
+</div>
+    <div class="container" style="padding-top:0;border:3px solid black;margin-bottom:50px;padding-left:0;">
+        
+            
+            <div id="ToC" class="collapse"style="position:fixed;background-color:white;z-index:10;bottom:50px;">
+            
+
+                
+            <div  style="overflow-y:scroll; overflow-x:hidden;padding:0;padding-right:25px;height:350px;">
+                    
+                        <div style="float:left;padding-left:30px;">1.)</div>
+                        <div style="padding-left:30px;">
+                        <a href="http://localhost/MetaBetaTest/TestList.php#Obj3" >I am the user.</a></div>
+                                <div style="float:left;padding-left:60px;">1.1)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req24" >I need a concise, documented onboarding procedure for new clients</a>
+                                </div>
+                                
+                    
+                        <div style="float:left;padding-left:30px;">2.)</div>
+                        <div style="padding-left:30px;">
+                        <a href="http://localhost/MetaBetaTest/TestList.php#Obj4" >What I need to accomplish with this application.</a></div>
+                                <div style="float:left;padding-left:60px;">2.1)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req72" >Client Recipient Folder</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">2.1.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del137" >Generate template html place-holder files within the Template Project</a>
+                                            </div>
+                                        
+                                            <div style="float:left;padding-left:90px;">2.1.2)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del138" >Read_Me.txt</a>
+                                            </div>
+                                        
+                                            <div style="float:left;padding-left:90px;">2.1.3)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del139" >Download Bootstrap/ Jquery JS/Css libraries within the client recipient folder</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">2.2)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req25" >User needs to be able to create a client profile quickly</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">2.2.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del62" >Batch script that instances the application template source code as a client dedicated object</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">2.3)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req3" >Must be able to backup/ archive client-project generated information.</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">2.3.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del45" >Back up client's UXD SQL Databases and Source Code</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">2.4)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req2" >How am I going to host this application?</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">2.4.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del3" >Setup a local WAMP Server to host database/ server-side rendering.</a>
+                                            </div>
+                                        
+                    
+                        <div style="float:left;padding-left:30px;">3.)</div>
+                        <div style="padding-left:30px;">
+                        <a href="http://localhost/MetaBetaTest/TestList.php#Obj5" >Application Output</a></div>
+                                <div style="float:left;padding-left:60px;">3.1)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req31" >Application's Generated Documents must be list and href Friendly</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">3.1.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del83" >Floara WYSIWYG HTML Editor for ORD textarea fields.</a>
+                                            </div>
+                                        
+                                            <div style="float:left;padding-left:90px;">3.1.2)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del79" >User is responsible for tagging urls and lists via Obj/Req/Del creation</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">3.2)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req26" >I need to communicate UXD info generated, via site map</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">3.2.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del63" >Modal Button Site Map Nodes</a>
+                                            </div>
+                                        
+                                            <div style="float:left;padding-left:90px;">3.2.2)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del121" >Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">3.3)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req23" >Generate a Key legend for each Web page's Wire frame.</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">3.3.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del59" >Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</a>
+                                            </div>
+                                        
+                                <div style="float:left;padding-left:60px;">3.4)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req64" >Primary Navigation Bar</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">3.4.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del122" >Primary Nav Bar</a>
+                                            </div>
+                                        
+                    
+                        <div style="float:left;padding-left:30px;">4.)</div>
+                        <div style="padding-left:30px;">
+                        <a href="http://localhost/MetaBetaTest/TestList.php#Obj45" >We need to address these common concerns for small business owners</a></div>
+                                <div style="float:left;padding-left:60px;">4.1)</div>
+                                <div style="padding-left:80px;">
+                                    <a href="http://localhost/MetaBetaTest/TestList.php#Req30" >The Small Business Owner wants to know how your service will benefit his website and business</a>
+                                </div>
+                                
+                                            <div style="float:left;padding-left:90px;">4.1.1)</div>
+                                            <div style="padding-left:120px;">
+                                                <a  href="http://localhost/MetaBetaTest/TestList.php#Del74" >How Alex's service works.</a>
+                                            </div>
+                                        </div>    </div>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+    <ol class="ordered">
+        <li class="listed" style="font-size:35px;font-weight:450;">
+                <h1 style="padding-left:10px;width:100%;" id="Obj3" >I am the user.</h1>
+                <h4 style="width:100%;padding-left:10px;">Who is going to be using this application?</h4>
+                <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>Myself exclusively.&nbsp;</p><p>This program&#39;s purpose is to generate documents for my client&#39;s consumption.&nbsp;</p><p>I will enter client information into the front-end, post interview, via recorded transcription. The client will never see this application; just the generated site map, wire frame key legend, and Text outlines.</p><p>I don&#39;t mind minor interface flaws, but the application should generate coherent, professional visual representations of the gathered information. The application&#39;s design should follow work flow.&nbsp;</p><p>Objective data should be mutable, as it will be changing often. Followed by their requirements and deliverables.&nbsp;</p><p>Minimal amount of initial configuration needed for new clients, and would like to have a means to backup individual databases.</p><p>I need to be able to view objectives with their nested requirements and deliverables, to generate ideas.</p></div>
+                <ol class="ordered"><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req24" >I need a concise, documented onboarding procedure for new clients</h1>
+                            <h4 style="width:100%;">Objective - What does the user want to accomplish?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;">I need to document a set of procedures for new client setup. <br />
+<br />
+This is to ensure proper archive of client information, as well as data loss prevention.</div>
+                            
+                                    <ol class="ordered"></ol></li></ol></li><li class="listed" style="font-size:35px;font-weight:450;">
+                <h1 style="padding-left:10px;width:100%;" id="Obj4" >What I need to accomplish with this application.</h1>
+                <h4 style="width:100%;padding-left:10px;">What does the user need to accomplish using this application?</h4>
+                <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                <ol class="ordered"><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req72" >Client Recipient Folder</h1>
+                            <h4 style="width:100%;">Functional - What does the user need to do in order reach their objective?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p><em><strong>I need the application to generate a folder that contains the following:</strong></em></p><ul><li>SiteMap.html(Place Holder File)</li><li>A folder for their wireframes<ul><li>Wire_Frame_Home.html (Place Holder File)</li></ul></li><li>Row-Col ORD Viewer.html (Place Holder File)</li><li>ORD ToC.html (Place Holder File)</li><li>ReadMe.txt</li></ul><p><br></p></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del137" >Generate template html place-holder files within the Template Project</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I will generate the placeholder html files within the template (metaBeta) project, and save them into the &quot;client recipient&quot; folder.</p><p>This way, it will copy over into new project instances.</p><br></div>
+                                        </li> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del138" >Read_Me.txt</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Content Deliverable</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>This Text file needs to communicate the following to Web Devs/Designers, Content Creators and back-end devs:</p><ol><li>Who this is for, and how to interpret this information.<ul><li>The contents of this folder contains the blueprints for all collaborative parties involved in the creation of this website/ application.<ul><li>Web Devs/ &nbsp;Designers/ Content Creators/ Company Stakeholders</li></ul></li><li>In it you will find a sitemap, a folder containing client-requested wire frames, and a means to view the client-defined Objectives that motivate the resulting Deliverables found on each page.</li><li>How to use and view each file. (General overview)<ul><li>All of these documents are in html format, and can be viewed on any browser/ desktop.<ul><li>I chose the html format in order to generate dynamic, informative blueprints that expound on each piece of content&#39;s specifications/ motivations in one central location.<ul><li>As of now these html documents are not mobile/ tablet friendly...<ul><li>I recommend using the Chrome browsers</li><li>Remember the play with your zoom settings:<ul><li>ctrl + &#39;-&#39; | &nbsp;ctrl + &#39;+&#39; | ctrl + &#39;0&#39; (reset to 100% zoom)</li></ul></li></ul></li><li>They can be viewed the offline, so long as the file is not moved from the original folder.<ul><li>(Due to their third party extensions)</li></ul></li></ul></li></ul></li></ul></li></ul></li><li>What is User Experience Design?&quot;<ul><li>User Experience Design, according to Jesse James Garrett, is comprised of these five layers starting from top to bottom:<ol><li>Surface<ul><li>Visual design is essentially the look of the finished product.&nbsp;<ul><li>What does it look like?&nbsp;</li><li>What fonts are we using?&nbsp;</li><li>What colors are we using?</li><li>How does all of that reinforce and support the information structure?&nbsp;</li><li>How does all of that reinforce and support our means of navigation of direction of feedback.</li></ul></li></ul></li><li>Skeleton<ul><li>Comprised of two elements:<ol><li><strong>Interface Design</strong> is the arrangement of all the elements, within the user interface, that enables us<br>to interact with the functionality of the application as a whole. (***Wire frames***)</li><li><strong>Navigation design&nbsp;</strong>is a critical critical element particularly in terms of good user experience because navigation determines how the user moves through the information.</li></ol></li></ul></li><li>Structure<ul><li>Comprised of two elements:<ol><li>Interaction Design - How does the system behave when somebody does something. How your user will typically, or ideally, navigate through your website?&nbsp;</li><li>Information Architecture - The creation of organizational and navigational schemes.<ol><li>Good IA allows people to intuitively navigate through content effectively, with little to no fatigue.&nbsp;<ol><li>Effective IA is flexible, adaptive to changes, and accommodates growth. (***Site Maps***)</li></ol></li></ol></li></ol></li></ul></li><li>Scope<ul><li>Strategy becomes scope when user needs and business objectives are translated into requirements for content and functionality. A clear description of what you&#39;re going to build tells everyone involved what the project&#39;s goals are. With no documented requirements youre just playing telephone...<ol><li>Content Requirements<ul><li>What&#39;s required to provide value to the users?</li><li>What information does the user need to know in order to conduct business with you responsibly? What are some headlines or ideas for content that your users would find valuable?&nbsp;</li><li>Content should be user-centered, and have a major impact on User Experience</li></ul></li><li>Functional Requirements<ul><li>What the user needs to be able to accomplish using your website/ application.</li></ul></li></ol></li></ul></li><li>Strategy<ul><li>Comprised of two elements (both of which must have measurable success metrics):<ol><li>User needs&nbsp;<ul><li>Where are the things that people expect?&nbsp;</li><li>What do they want when they use our product?&nbsp;</li><li>What it is that the audience wants from us, and how that sort of fits in with their other goals?</li></ul></li><li>Business objectives&nbsp;<ul><li>Largely concerned with success metrics of some point.</li></ul></li></ol></li></ul></li></ol></li></ul></li><li>How UXD is communicated through these documents?<ul><li>The documents in this folder cover the first 4 of the 5 Elements of User Experience Design:<ol><li>Strategy<ul><li>User &amp; Business &quot;Objectives&quot; are explicitly outlined.<ol><li>Based on market research, and company stakeholder objectives/ goals.</li><li>Again, these goals have measurable success metrics.</li></ol></li></ul></li><li>Scope<ul><li>These are the &quot;Requirements&quot; that are needed to be met in order to achieve the objective upon which it is based.<ol><li>Content requirements<ul><li>Definition of content elements required in the site in order to meet their respective user/ business objectives.</li></ul></li><li>Functional Specifications<ul><li>Feature set , or detailed descriptions of functionality the site must include in order to meet their respective user/ business objectives.</li></ul></li></ol></li></ul></li><li>Structure<ul><li>&quot;Content/ Functional Deliverables&quot;:<ol><li>Defined to establish the agreed upon set of procedures to fulfill its respective requirement.</li><li>These Deliverables are then categorized based on the web page in which they will be located.</li><li>You can view these Deliverables via the Site_Map.html document.<ul><li>Each Node represents its respective web page.<ul><li>Clicking the node, opens a modal window listing out all of the deliverables to be displayed within its page.<ul><li>Clicking any of the listed Deliverable titles within displays relevant information<ul><li>This includes info on the Deliverable itself, as well as the Requirement &amp; Objective upon which it is based.</li></ul></li></ul></li></ul></li></ul></li></ol></li></ul></li><li>Skeleton<ul><li>***This stage is entirely optional, and is usually reserved for complex website/ app page layouts.***</li><li>Stakeholders request Wire Frames for specified web/ app pages and display resolution.&nbsp;<ul><li>These Wire Frames are also interactable html documents, and serve to visually communicate the local placement of grouped &amp; independent deliverables.<ul><li>Red nodes indicate an independent Deliverable<ul><li>Clicking this node opens a modal window displaying its deliverable (red), requirement (yellow), objective(green)</li></ul></li><li>Light blue nodes indicate a grouping of Deliverables<ul><li>Also, opens a modal window, but contains a list of its contained deliverables.<ul><li>Clicking this node opens a modal window displaying its deliverable (red), requirement (yellow), objective(green)&nbsp;</li></ul></li></ul></li></ul></li></ul></li></ul></li></ol></li></ul></li><li>How to use/ interpret the documents within this folder:<ul><li>ObjReqDel_RowCol_View.html<ul><li><br></li><li>ObjReqDel_TableOfContents.html</li></ul></li><li>Site_Map.html</li><li>Wire_Frame_[page_title].html</li></ul></li><li>Contact information for troubleshooting support, or questions regarding a clients project<ul><li>Should ask for a retainer for such support...</li></ul></li></ol><br></div>
+                                        </li> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del139" >Download Bootstrap/ Jquery JS/Css libraries within the client recipient folder</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Content Deliverable</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>This will allow the client to view the documents offline, so long as the file is within the folder.</p><br></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req25" >User needs to be able to create a client profile quickly</h1>
+                            <h4 style="width:100%;">Objective - What does the user want to accomplish?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I need to be able to create for each client a project folder dedicated to their UXD information. This would include the underlying front end that retrieves and renders that information, as each client will need a dedicated database.</p></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del62" >Batch script that instances the application template source code as a client dedicated object</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;">Write a batch script that uses regular expressions to instance the template. <br />
+<br />
+The script will ask for the desired name for the client's database, and will rewrite database names of the affected lines of code within each php script. <br />
+<br />
+<br />
+<br></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req3" >Must be able to backup/ archive client-project generated information.</h1>
+                            <h4 style="width:100%;">Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;">Must find a way to backup client information, even after business has concluded.<br />
+<br />
+Must secure proprietary source code as well.</div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del45" >Back up client's UXD SQL Databases and Source Code</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I will backup the WAMP Server&#39;s SQL Server Folder directory to an external HDD.<br />
+I will create/ backup clients&#39; source code to multiple locations.<br />
+I will also backup the source code template separately.</p><br><p>We need to explicitly define the specific mission critical files, before we back them up. (See Below...)</p></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req2" >How am I going to host this application?</h1>
+                            <h4 style="width:100%;">Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;">I need to create a repository for client UXD information. <br />
+<br />
+Client information would be collected via&nbsp;form to ensure UXD best practices. <br />
+<br />
+I need the client on-boarding process to be seamless, repeatable, with no chance for loss of data.</div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del3" >Setup a local WAMP Server to host database/ server-side rendering.</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>Host each client&#39;s UXD information locally on it&#39;s own dedicated SQL Database Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p><br><p>Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p></div>
+                                        </li></ol></li></ol></li><li class="listed" style="font-size:35px;font-weight:450;">
+                <h1 style="padding-left:10px;width:100%;" id="Obj5" >Application Output</h1>
+                <h4 style="width:100%;padding-left:10px;">What do I want the project to accomplish?</h4>
+                <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                <ol class="ordered"><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req31" >Application's Generated Documents must be list and href Friendly</h1>
+                            <h4 style="width:100%;">Objective - What does the user want to accomplish?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;">The generated documents must display information in a format that allows the user to click links directly and copy paste lists in a universally understood format.<br />
+<br />
+I need the application to be able to output html formatted lists, in order to communicate hierarchical ideas to my&nbsp;clients. <br />
+<br />
+Because my clients are going to be copying and pasting this information via email, and notes. The clipboard must pick up on the list format, ghetto rigged indentation is not universally understood.</div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del83" >Floara WYSIWYG HTML Editor for ORD textarea fields.</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Content Deliverable</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p><a href="https://www.froala.com" rel="noopener noreferrer" target="_blank">Floara </a>WYSIWYG HTML Editor for ORD textarea fields.</p><br></div>
+                                        </li> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del79" >User is responsible for tagging urls and lists via Obj/Req/Del creation</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I, the user, must manually enter list and hrefs tags when creating/ editing nodes. I can no long use textarea tags, which will also mean that I can&#39;t use them in the generated html client documents for their &quot;stretching&quot; function.</p><ol><li>Maybe I should consider the possibility of stretching div containers?<ul><li><a href="https://codepen.io/cshaw/pen/zvwdbB/" target="_blank">CodePen Adjustable Div</a></li></ul></li><li>I can create a script that allows the client to &quot;select all&quot; text of each div container<ul><li><a href="https://stackoverflow.com/questions/24553251/is-it-possible-to-restrict-the-range-of-select-all-ctrla" target="_blank">Restrict the range of select all cntrl-a</a></li></ul></li></ol><br><p>I must replace the application&#39;s current textarea display technique, with a stretchable div container schema suited for user&#39;s html tagged input</p></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req26" >I need to communicate UXD info generated, via site map</h1>
+                            <h4 style="width:100%;">Functional - What does the user need to do in order reach their objective?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del63" >Modal Button Site Map Nodes</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Project Functionality</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>I need the dashboard to contain a php link that renders the html code for each Site Map Node. The site map itself will have to be manually created, via EDraw. Once I export the Site Map as html code, I will wrap &#39;s around the node container pointing to it&#39;s corresponding modal-button.&nbsp;</p><p>I will then append their modal windows. Each site map node (or web page) will be clickable and on click will bring up a modal window that displays the following hierarchy:&nbsp;</p><p>Global Nav Tag or Web Page Name (Modal Button)</p><ol><li>Local Nav Tag Group Name(Collapse to list its Deliverables)&nbsp;<ol><li>Independent Deliverable Title (Collapse)<ol><li>Deliverable Type (Collapse)</li><li>Deliverable Core Idea&nbsp;</li><li>Deliverable Delivery Method&nbsp;</li><li>Requirement Title (Collapse)&nbsp;<ol><li>Requirement Type&nbsp;</li><li>Requirement Description&nbsp;</li><li>Strategic Objective Title (Collapse)&nbsp;<ol><li>Strategic Objective Description&nbsp;</li><li>Strategic Objective Question</li><li>Strategic Objective Description&nbsp;</li></ol></li></ol></li></ol></li></ol></li><li>Independent Deliverable Title (Collapse)&nbsp;<ol><li>&nbsp;Deliverable Type(Collapse)<ol><li>Deliverable Core Idea&nbsp;</li><li>Deliverable Delivery Method&nbsp;</li><li>&nbsp;Requirement Title (Collapse)&nbsp;<ol><li>&nbsp;Requirement Type&nbsp;</li><li>Requirement Description</li><li>Strategic Objective Title (Collapse)&nbsp;<ol><li>Strategic Objective Type</li><li>Strategic Objective Question&nbsp;</li><li>Strategic Objective Description</li></ol></li></ol></li></ol></li></ol></li></ol><br><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                        </li> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del121" >Batch script that wraps EDraw GlobalNavTag Nodes with their generated modal button tags</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">General Solution</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The Site Map will need to be generated by three documents:</p><ol><li>The saved HTML document of generateSiteMap.php&nbsp;</li><li>An Edraw html export, that has all of the GlobalNavTags nodes pre-populated&nbsp;</li><li>A Batch script that will...<ol><li>Find the modal buttons from the generateSiteMap.html</li><li>match them to their corresponding Edraw nodes within the Edraw sitemap html export</li><li>wrap the Edraw nodes with their modal button tags</li><li>It will also append all hidden modal buttons to the Edraw html export </li></ol></li></ol><br></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req23" >Generate a Key legend for each Web page's Wire frame.</h1>
+                            <h4 style="width:100%;">Functional - What does the user need to do in order reach their objective?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The Key legend will appear at the top-right of each web page&#39;s wire frame.<br>Each node will have a numeric identifier that corresponds to the the items on the wire frame.<br>Click on the listed group or independent deliverable nodes to view all nested UXD information.<br><br>Key Legend Hierarchy is as follows:<br>Global Nav Tag [Document Title]</p><ol><li>[Numeric Identifier] Local Nav Tag (or Independent Deliverable)<ol><li>&nbsp;Deliverable Title</li><li>Deliverable Type</li><li>Deliverable Core Idea</li><li>Deliverable Delivery Method<ol><li>Requirement Title</li><li>Requirement Type</li><li>Requirement Description</li><li>Strategic Objective Title<ol><li>Strategic Objective Question</li><li>Strategic Objective Description</li></ol></li></ol></li></ol></li></ol></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del59" >Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Project Functionality</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p><span style="background-color: initial; font-size: 1rem;">When you click the link on the main dashboard, you will be taken to a page that lists out all defined globalNavTags.</span></p><p>Each GlobalNavTag, web page, container will hold a list of its localNavTags and Independent Deliverables. Each title will point to a modal window that displays its corresponding O.R.D. information.</p><p>I, the user, will have to save the htm file manually.</p><ul><li>I will then have a python regex script that will pull these modal tags and wrap them around their corresponding edraw shape. (By label)</li><li>The Python script will also regex write the appropriate jquery/ bootstrap libraries/ and javascript scripts/ css stylings</li></ul><br><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                        </li></ol></li><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req64" >Primary Navigation Bar</h1>
+                            <h4 style="width:100%;">Objective - What does the user want to accomplish?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The user needs to be able to navigate through an intuitive primary navigation bar.&nbsp;</p><p><br></p></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del122" >Primary Nav Bar</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Project Functionality</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The primary navigation bar will host the following button hierarchy:&nbsp;</p><ol><li>Home</li><li>About<ul><li>Alex.</li><li>What is UXD?</li><li>How &amp; Who I help.</li><li>My program</li></ul></li><li>Portfolio</li><li>Do it yourself, buy my program</li><li>Hire/ Contact Me!</li></ol><br></div>
+                                        </li></ol></li></ol></li><li class="listed" style="font-size:35px;font-weight:450;">
+                <h1 style="padding-left:10px;width:100%;" id="Obj45" >We need to address these common concerns for small business owners</h1>
+                <h4 style="width:100%;padding-left:10px;">How is the Need/ Problem/ Opportunity Defined by the prospect?</h4>
+                <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><ol><li>&quot;I need to build an effective business website, but I&#39;m not technically savvy.&quot;</li><li>&nbsp;&quot;I need someone to just build the damn thing for me, I dont have time for this shit.&quot;</li><li>&nbsp;&quot;I know that having a website is important in driving business, but I dont know how to capitalize on this opportunity 100%...&quot;&nbsp;</li><li>&quot;I am short handed and budgeted. <strong><em>I know somewhere down the line I will need</em></strong> to plan a website for my business. I just don&#39;t have time.&quot;</li></ol></div>
+                <ol class="ordered"><li class="listed" style="font-size:35px;font-weight:450;"><h1 style="width:100%;"  id="Req30" >The Small Business Owner wants to know how your service will benefit his website and business</h1>
+                            <h4 style="width:100%;">Objective - What does the user want to accomplish?</h4>
+                            <div style="margin-left:5px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>The website must communicate the following information:&nbsp;</p><ol><li>How Alex&#39;s service works.&nbsp;<ol><li>What is UXD? Why does it matter?&nbsp;</li><li>How this service expedites the web building process.&nbsp;</li><li>How this service lowers overhead, confusion, and frustration.</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.&nbsp;</li></ol></li><li>What Alex Delivers.<ol><li>Alex delivers sitemaps and wireframes (needs work)</li><li>Alex delivers sitemaps and wireframes (needs work)&nbsp;</li><li>All produced material is produced in an html format.<ol><li>&nbsp;This information is easily shared, and requires only your browser to open it.&nbsp;</li><li>&nbsp;Communicates explicitly what you determine to be a successful job for webdevs, web designers, and content creators.&nbsp;</li><li>&nbsp;Not yet mobile friendly!</li></ol></li></ol></li></ol></div>
+                            
+                                    <ol class="ordered"> 
+                                        <li class="listed" style="font-size:35px;font-weight:450;">
+                                            <h1 style="width:100%;padding-right:100px;margin-left:10px;"  id="Del74" >How Alex's service works.</h1>
+                                            <h4 style="padding-left:10px;width:100%;padding-right:100px;">Content Deliverable</h4>
+                                            <div style="margin-left:10px;padding-left:20px;border-left:2px solid black;font-size:18px;padding-right:100px;font-weight:380;"><p>Alex will write a block of content covering the following headlines:</p><ul><li>What is UXD? Why does it matter?</li><li>How Alex&#39;s service works.&nbsp;</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.</li><li>How I Help? (How this service expedites the web building process.)</li><li>Fast, Affordable website blue printing, 100% money back guarantee!<ul><li>How this service lowers overhead, confusion, and frustration.</li></ul></li></ul><br><p>We will create a page dedicated to hosting all of this information.</p></div>
+                                        </li></ol></li></ol></li>    </ol>
+               
+</div>
+<body >
+</body>
+</html>

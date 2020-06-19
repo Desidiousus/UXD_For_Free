@@ -1,0 +1,61 @@
+How is the Need/ Problem/ Opportunity Defined by the prospect?
+How is the Need/ Problem/ Opportunity Defined by the user?
+
+Prospects' product related search-engine behavior:
+Users' product related search-engine behavior?
+
+Concerns/ Questions the prospect will have about your product?
+Concerns/ Questions the prospect will have about your product?
+
+What does the prospect desire?
+What does the user desire?
+
+What does the user need to accomplish using this application?
+What does the user need to accomplish using this application?
+
+Who is going to be using this application?
+Who is going to be using this application?
+
+What do I want the website to offer?
+What do I want the project to offer?
+
+What do I want the project to accomplish?
+What do I want the project to accomplish?
+
+Message or Information I wish to convey?
+Message, offer, or content the website should convey to the user?
+
+Name one of your competitors? What does their website accomplish well? What can we learn from their experience?
+Who are your competitors? What does their website do well? What can we learn from their experience?
+
+Who's typically going to visit the site? What are they expecting to accomplish? Create a User Persona.
+Who's typically going to visit the site? What are they expecting to accomplish? Create a User Persona.
+
+Do you have any Market Research Material that could impact project success?
+Do you have any Market Research Material that could impact project success?
+
+Cornerstone Content - What information does your prospect need to know in order to responsibly conduct business with you?
+Cornerstone content links to the most important/ relevant pieces of content on your website, and intuitively guides your readers to them. It’s what people need to know to make use of your website and do business with you. 
+It also identifies the major pieces of site functionality, and how the website guides the user to each function either implicitly (through intuitive design) or explicitly (prompting the user with calls-to-action/ hyperlinks/ instructions). 
+"What does the user want to achieve by using your website? What value does the website provide for the company's stakeholders and brand? How does the website provide this value?"
+
+
+Name a stakeholder, or senior decision maker, involved in the development of this project. What is their role? What do they need this project to accomplish/ communicate?
+Name a stakeholder, or senior decision maker, involved in the development of this project. What is their role? What do they need this project to accomplish/ communicate?
+
+What testimonials, Case Studies, White papers, or other credibility building marketing materials do you have?
+What testimonials, Case Studies, White papers, appearances or other credibility building materials do you have?
+
+What is your company's elevator pitch? “I help (who do you help?) by doing (how do you help them?) so that (why is this important?).”
+What is your company's elevator pitch? “I help (who do you help?) by doing (how do you help them?) so that (why is this important?).” 
+
+What are your product's major features, and how do they respectively benefit for the user?
+What are your product's major features, and how do they respectively benefit for the user? 
+
+Create a User Scenario. Describe how the user will use your website/ app. This is where visualizing how a user will use a product or service will help generate design ideas.
+Create a User Scenario. Describe how the user will use your website/ app. This is where visualizing how a user will use a product or service will help generate design ideas.
+
+What is your unique selling proposition? What is the factor or consideration presented as the reason that your product is different from or better than the competition?
+What is your unique selling proposition? What is the factor or consideration presented as the reason that your product is different from or better than the competition?
+
+

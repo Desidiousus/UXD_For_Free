@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<!-- Jquery CDN and Local JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- BootStrap CDN and Local JS --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+  <style>
+  .hide {
+    display:none;
+  }
+  .GlobalNavTag:hover {color:#c67b10 !important;border:solid 1px #d98484 !important;background-color:black !important;color:#c67b10 !important;}
+  .LocalGroupNavTag:hover{color:#29A5FF !important;border:solid 1px #d98484 !important;background-color:black !important;color:#29A5FF !important;}
+  .IndependentDeliverables:hover{text-decoration:underline;color:#d98484 !important;border:solid 1px #d98484 !important;background-color:black !important;color:#d98484 !important;}
+  .LocalGroupedDeliverable:hover{text-decoration:underline;color:#99DFFF !important;border:solid 1px #d98484 !important;background-color:black !important;color:#d98484 !important;}
+  .scrollDiv{text-align:left;resize: vertical;border: 1px solid #222; padding: 10px;overflow-x:hidden;padding-left:15px;height:650px;float: left; display: inline;}
+  label{text-align:left}
+  .modal-content{padding:15px !important;background-color:#e3ac5d;}
+  a:hover{color:#c67b10 !important;border:solid 1px #d98484 !important;background-color:black !important;color:#c67b10 !important;}
+
+  </style>
+  <script>
+    function hoverInIndependent ( element )
+                    {
+                            var bruh = element.querySelector( "path");
+                            var kuh = element.querySelector( "text");
+
+                            bruh.style.fill = "black";
+                            kuh.style.stroke = "#c67b10 ";
+                            kuh.style.color = "#c67b10";
+                    }
+
+    function hoverOutIndependent ( element )
+                    {
+                        var bruh = element.querySelector( "path");
+                        var kuh = element.querySelector( "text");
+
+                            bruh.style.fill = "#e3ac5d";
+                            kuh.style.stroke = "black";
+                            kuh.style.border = "#c67b10 2px solid";
+                            kuh.style.color = "black";
+                    }
+  function myFunction(b, idA) {
+    if(document.getElementById("deliverabledeets" + idA).classList.contains("hide") )
+      {
+      document.getElementById("deliverabledeets" + idA).classList.remove("hide");
+
+      document.getElementById(b + '1').classList.add("hide");
+      }
+    else
+      {
+        document.getElementById("deliverabledeets" + idA).classList.add("hide");
+        
+        
+      }
+
+  }
+  function BackToDelivList(c, d, idA ) {
+    
+      document.getElementById(d + '1').classList.remove("hide");
+
+      var testarray = document.getElementsByClassName(".AllBro");
+        for(var i = 0; i < testarray.length; i++)
+        {
+            testarray[i].classList.remove("hide");
+            testarray[i].classList.add("hide");
+          
+        }
+        $("."+d).addClass("hide");
+      if(document.getElementsByClassName(d).classList.contains("hide") )
+      {
+      document.getElementsByClassName(d).classList.remove("hide");
+
+      
+      }
+
+
+  }
+  </script>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>SiteMap_template</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            min-width: 0;
+            margin: 0 10px;
+        }
+        #nav-thumbs{
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        .nav-thumb span{
+            pointer-events: none;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            display: block;
+            margin:10px auto;
+            margin-bottom: 0;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #76838f;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+        #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+        #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+        .nav-thumb >div:hover{
+            box-shadow:1px 1px 4px rgba(0,0,0,.4);
+        }
+        .selected .number{
+            border-color: #08a1ef transparent;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info"></div>
+      <div id="main-content">
+        <div id="svg-container"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1123 794" height="793" width="1122" id="page1" preserveAspectRadio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events"><style type="text/css"><![CDATA[
+.st1 {fill:#000000;font-family:Georgia;font-size:23pt}
+.st2 {text-decoration:underline}
+]]></style><defs/><rect y="0" stroke="#808080" height="794" width="1123" fill="#ffffff" x="0"/><a onmouseover="hoverInIndependent ( this );" onmouseout="hoverOutIndependent ( this );" data-toggle="modal" data-target="#Home"><g transform="translate(445.76,252.15)" id="shape1"><path d="M0,0L231,0L231,107.7L0,107.7L0,0z" stroke="#3498db" fill="#e3ac5d"/><text class="st1"><tspan class="st2" y="63.9" x="74">Home</tspan></text></g></a><a onmouseover="hoverInIndependent ( this );" onmouseout="hoverOutIndependent ( this );" data-toggle="modal" data-target="#Key-LegendModalPage"><g transform="translate(120.5,548.15)" id="shape2"><path d="M0,0L231,0L231,107.7L0,107.7L0,0z" stroke="#3498db" fill="#e3ac5d"/><text class="st1"><tspan class="st2" y="45.9" x="33">Key-Legend </tspan><tspan class="st2" y="81.9" x="35">Modal Page</tspan></text></g></a><a onmouseover="hoverInIndependent ( this );" onmouseout="hoverOutIndependent ( this );" data-toggle="modal" data-target="#WorkingwithAlex"><g transform="translate(445.76,548.15)" id="shape3"><path d="M0,0L231,0L231,107.7L0,107.7L0,0z" stroke="#3498db" fill="#e3ac5d"/><text class="st1"><tspan class="st2" y="45.9" x="22">Working with </tspan><tspan class="st2" y="81.9" x="85">Alex</tspan></text></g></a><a onmouseover="hoverInIndependent ( this );" onmouseout="hoverOutIndependent ( this );" data-toggle="modal" data-target="#Contact"><g transform="translate(771.02,548.15)" id="shape4"><path d="M0,0L231,0L231,107.7L0,107.7L0,0z" stroke="#3498db" fill="#e3ac5d"/><text class="st1"><tspan class="st2" y="63.9" x="62">Contact</tspan></text></g></a><g transform="translate(561.26,359.86)" id="shape5"><path stroke="#0070c0" d="M0,0L0,67.3L-325.3,67.3L-325.3,175.6" fill="none" stroke-width="6"/><path stroke="#0070c0" d="M-325.3,188.3L-317.9,162.8L-325.3,175.6L-332.6,162.8L-325.3,188.3" fill="#0070c0" stroke-linecap="round" stroke-width="1"/></g><g transform="translate(561.26,427.15)" id="shape6"><path stroke="#0070c0" d="M0,0L0,108.3" fill="none" stroke-width="6"/><path stroke="#0070c0" d="M0,121L7.3,95.5L0,108.3L-7.3,95.5L0,121" fill="#0070c0" stroke-linecap="round" stroke-width="1"/></g><g transform="translate(561.26,427.15)" id="shape7"><path stroke="#0070c0" d="M0,0L325.3,0L325.3,108.3" fill="none" stroke-width="6"/><path stroke="#0070c0" d="M325.3,121L332.6,95.5L325.3,108.3L317.9,95.5L325.3,121" fill="#0070c0" stroke-linecap="round" stroke-width="1"/></g></g></svg></div><div id="MainDashboard" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('MainDashboard', 'MainDashboard', '40')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Main Dashboard/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="MainDashboard1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    </div> </div>
+                 
+                </div>
+
+              </div>
+              </div>
+              </div><div id="Key-LegendModalPage" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('Key-LegendModalPage', 'Key-LegendModalPage', '64')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Key-Legend Modal Page/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="Key-LegendModalPage1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    </div> </div>
+                 
+                </div>
+
+              </div>
+              </div>
+              </div><div id="lol" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('lol', 'lol', '67')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ lol/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="lol1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    <button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('lol', '3' )"><h6 style="font-size:30px;padding-right:80px" >Setup a local WAMP Server to host database/ server-side rendering.</h6></button><button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('lol', '122' )"><h6 style="font-size:30px;padding-right:80px" >Primary Nav Bar</h6></button><button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('lol', '74' )"><h6 style="font-size:30px;padding-right:80px" >How Alex's service works.</h6></button></div> <div style="padding:0;" class="AllBro lol hide" id="deliverabledeets3"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">General Solution:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; padding-right:50px;"><strong>Setup a local WAMP Server to host database/ server-side rendering.</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>Host each client&#39;s UXD information locally on it&#39;s own dedicated SQL Database Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p><p>Download/ configure WAMP Server to host &quot;client on-boarding&quot; web-form and database. Visually represent client information via server-side rendering.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement3"><h6 style="padding-right:50px;font-size:30px;">Technical - What are the technical constraints of this Strategic Objective? What resources are needed to get this done?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets3">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>How am I going to host this application?</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">I need to create a repository for client UXD information. 
+
+Client information would be collected via  form to ensure UXD best practices. 
+
+I need the client on-boarding process to be seamless, repeatable, with no chance for loss of data.</div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement3"><h6 style="font-size:30px;">What does the user need to accomplish using this application?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets3">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>What I need to accomplish with this application.</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro lol hide" id="deliverabledeets122"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">Project Functionality:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; padding-right:50px;"><strong>Primary Nav Bar</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The primary navigation bar will host the following button hierarchy:&nbsp;</p><ol><li>Home</li><li>About<ul><li>Alex.</li><li>What is UXD?</li><li>How &amp; Who I help.</li><li>My program</li></ul></li><li>Portfolio</li><li>Do it yourself, buy my program</li><li>Hire/ Contact Me!</li></ol></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement122"><h6 style="padding-right:50px;font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets122">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>Primary Navigation Bar</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The user needs to be able to navigate through an intuitive primary navigation bar.&nbsp;</p><p><br></p></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement122"><h6 style="font-size:30px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets122">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro lol hide" id="deliverabledeets74"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">Content Deliverable:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; padding-right:50px;"><strong>How Alex's service works.</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>Alex will write a block of content covering the following headlines:</p><ul><li>What is UXD? Why does it matter?</li><li>How Alex&#39;s service works.&nbsp;</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.</li><li>How I Help? (How this service expedites the web building process.)</li><li>Fast, Affordable website blue printing, 100% money back guarantee!<ul><li>How this service lowers overhead, confusion, and frustration.</li></ul></li></ul><p>We will create a page dedicated to hosting all of this information.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement74"><h6 style="padding-right:50px;font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets74">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>The Small Business Owner wants to know how your service will benefit his website and business</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The website must communicate the following information:&nbsp;</p><ol><li>How Alex&#39;s service works.&nbsp;<ol><li>What is UXD? Why does it matter?&nbsp;</li><li>How this service expedites the web building process.&nbsp;</li><li>How this service lowers overhead, confusion, and frustration.</li><li>Alex records phone interviews, and transcribes that information into an goal/req/del outline for client approval.&nbsp;</li></ol></li><li>What Alex Delivers.<ol><li>Alex delivers sitemaps and wireframes (needs work)</li><li>Alex delivers sitemaps and wireframes (needs work)&nbsp;</li><li>All produced material is produced in an html format.<ol><li>&nbsp;This information is easily shared, and requires only your browser to open it.&nbsp;</li><li>&nbsp;Communicates explicitly what you determine to be a successful job for webdevs, web designers, and content creators.&nbsp;</li><li>&nbsp;Not yet mobile friendly!</li></ol></li></ol></li></ol></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement74"><h6 style="font-size:30px;">How is the Need/ Problem/ Opportunity Defined by the prospect?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets74">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>We need to address these common concerns for small business owners</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><ol><li>&quot;I need to build an effective business website, but I&#39;m not technically savvy.&quot;</li><li>&nbsp;&quot;I need someone to just build the damn thing for me, I dont have time for this shit.&quot;</li><li>&nbsp;&quot;I know that having a website is important in driving business, but I dont know how to capitalize on this opportunity 100%...&quot;&nbsp;</li><li>&quot;I am short handed and budgeted. <strong><em>I know somewhere down the line I will need</em></strong> to plan a website for my business. I just don&#39;t have time.&quot;</li></ol></div>
+                                  </div>
+                                  </div>  </div>
+                 
+                </div>
+
+              </div>
+              </div>
+              </div><div id="WorkingwithAlex" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('WorkingwithAlex', 'WorkingwithAlex', '75')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Working with Alex/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="WorkingwithAlex1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    </div> </div>
+                 
+                </div>
+
+              </div>
+              </div>
+              </div><div id="Contact" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('Contact', 'Contact', '141')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Contact/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="Contact1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    </div> </div>
+                 
+                </div>
+
+              </div>
+              </div>
+              </div><div id="Home" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="width:780px;padding:0">
+                  <div class="modal-header" style="width:750px;padding:0;">
+                    <button style="width:100%;background-color:#c67b10" class="GlobalNavTag" onclick="BackToDelivList('Home', 'Home', '140')"><h3 class="modal-title" style="text-decoration:underline;">/Return to/ Home/</h3></button>
+                  </div>
+                  <div class="modal-body" style="padding-top:0;background-color:#e3ac5d;padding:0;">
+                    
+                    <div class="show" id="Home1" >
+                    <h4 class="modal-title" class="show" style="color:black !important;margin-top:0;font-size:26px;">Page Content:</h4>
+                    
+                        <button class="LocalGroupNavTag" type="button" data-toggle="collapse" data-target="#LocalGroupDeliverables60" style="font-size:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:left;width:100%;border:solid black 2px;background-color:#29A5FF;" ><h5 style="font-size:30px;text-decoration:underline;">Footer</h5></button>
+                        <div  class="collapse" id="LocalGroupDeliverables60">       
+                        <button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:80px" 
+                            onClick="myFunction('Home',59 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</h6></button><button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:80px" 
+                            onClick="myFunction('Home',63 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Modal Button Site Map Nodes</h6></button><button class="LocalGroupedDeliverable" style="text-align:left;width:100%;border:solid black 2px;background-color:#99DFFF;padding-right:80px" 
+                            onClick="myFunction('Home',137 )"><h6 style="font-size:30px;margin-left:20px;margin-right:-20px;">Generate template html place-holder files within the Template Project</h6></button></div><button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('Home', '79' )"><h6 style="font-size:30px;padding-right:80px" >User is responsible for tagging urls and lists via Obj/Req/Del creation</h6></button><button class="IndependentDeliverables" style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;"
+                          onClick="myFunction('Home', '83' )"><h6 style="font-size:30px;padding-right:80px" >Floara WYSIWYG HTML Editor for ORD textarea fields.</h6></button></div> <div style="padding:0;" class="AllBro Home hide" id="deliverabledeets59"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">Project Functionality:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%;padding-right:50px; "><strong>Link that creates a php rendered list of deliverables, that point to modal info and are orginized by Web Page Titles; RAW htm file for client wireframes</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p><span style="background-color: initial; font-size: 1rem;">When you click the link on the main dashboard, you will be taken to a page that lists out all defined globalNavTags.</span></p><p>Each GlobalNavTag, web page, container will hold a list of its localNavTags and Independent Deliverables. Each title will point to a modal window that displays its corresponding O.R.D. information.</p><p>I, the user, will have to save the htm file manually.</p><ul><li>I will then have a python regex script that will pull these modal tags and wrap them around their corresponding edraw shape. (By label)</li><li>The Python script will also regex write the appropriate jquery/ bootstrap libraries/ and javascript scripts/ css stylings</li></ul><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement59"><h6 style="font-size:30px;">Functional - What does the user need to do in order reach their objective?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets59">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>Generate a Key legend for each Web page's Wire frame.</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The Key legend will appear at the top-right of each web page&#39;s wire frame.<br>Each node will have a numeric identifier that corresponds to the the items on the wire frame.<br>Click on the listed group or independent deliverable nodes to view all nested UXD information.<br><br>Key Legend Hierarchy is as follows:<br>Global Nav Tag [Document Title]</p><ol><li>[Numeric Identifier] Local Nav Tag (or Independent Deliverable)<ol><li>&nbsp;Deliverable Title</li><li>Deliverable Type</li><li>Deliverable Core Idea</li><li>Deliverable Delivery Method<ol><li>Requirement Title</li><li>Requirement Type</li><li>Requirement Description</li><li>Strategic Objective Title<ol><li>Strategic Objective Question</li><li>Strategic Objective Description</li></ol></li></ol></li></ol></li></ol></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement59"><h6 style="font-size:30px;padding-right:50px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets59">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro Home hide" id="deliverabledeets63"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">Project Functionality:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%;padding-right:50px; "><strong>Modal Button Site Map Nodes</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I need the dashboard to contain a php link that renders the html code for each Site Map Node. The site map itself will have to be manually created, via EDraw. Once I export the Site Map as html code, I will wrap &#39;s around the node container pointing to it&#39;s corresponding modal-button.&nbsp;</p><p>I will then append their modal windows. Each site map node (or web page) will be clickable and on click will bring up a modal window that displays the following hierarchy:&nbsp;</p><p>Global Nav Tag or Web Page Name (Modal Button)</p><ol><li>Local Nav Tag Group Name(Collapse to list its Deliverables)&nbsp;<ol><li>Independent Deliverable Title (Collapse)<ol><li>Deliverable Type (Collapse)</li><li>Deliverable Core Idea&nbsp;</li><li>Deliverable Delivery Method&nbsp;</li><li>Requirement Title (Collapse)&nbsp;<ol><li>Requirement Type&nbsp;</li><li>Requirement Description&nbsp;</li><li>Strategic Objective Title (Collapse)&nbsp;<ol><li>Strategic Objective Description&nbsp;</li><li>Strategic Objective Question</li><li>Strategic Objective Description&nbsp;</li></ol></li></ol></li></ol></li></ol></li><li>Independent Deliverable Title (Collapse)&nbsp;<ol><li>&nbsp;Deliverable Type(Collapse)<ol><li>Deliverable Core Idea&nbsp;</li><li>Deliverable Delivery Method&nbsp;</li><li>&nbsp;Requirement Title (Collapse)&nbsp;<ol><li>&nbsp;Requirement Type&nbsp;</li><li>Requirement Description</li><li>Strategic Objective Title (Collapse)&nbsp;<ol><li>Strategic Objective Type</li><li>Strategic Objective Question&nbsp;</li><li>Strategic Objective Description</li></ol></li></ol></li></ol></li></ol></li></ol><p>This will be located in the footer of the main dashboard, as it will not be frequently used.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement63"><h6 style="font-size:30px;">Functional - What does the user need to do in order reach their objective?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets63">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>I need to communicate UXD info generated, via site map</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>The user needs to quickly generate a Site Map that intuitively communicates most, if not all, of the UXD client information gathered via front-end form. The site map must be communicated in a shareable format, that could be viewed on a desktop device. All UXD gathered must be communicated in a single document.</p></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement63"><h6 style="font-size:30px;padding-right:50px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets63">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro Home hide" id="deliverabledeets137"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">General Solution:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%;padding-right:50px; "><strong>Generate template html place-holder files within the Template Project</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I will generate the placeholder html files within the template (metaBeta) project, and save them into the &quot;client recipient&quot; folder.</p><p>This way, it will copy over into new project instances.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement137"><h6 style="font-size:30px;">Functional - What does the user need to do in order reach their objective?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets137">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>Client Recipient Folder</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p><em><strong>I need the application to generate a folder that contains the following:</strong></em></p><ul><li>SiteMap.html(Place Holder File)</li><li>A folder for their wireframes<ul><li>Wire_Frame_Home.html (Place Holder File)</li></ul></li><li>Row-Col ORD Viewer.html (Place Holder File)</li><li>ORD ToC.html (Place Holder File)</li><li>ReadMe.txt<ul><li>This Text file needs to communicate the following to Web Devs/Designers, Content Creators and back-end devs:<ul><li>What Objectives/ Requirements/ Deliverables are in the context of this project.</li><li>How to use and view each file. (General overview)</li><li>Who this folder is for and how to interpret this information.</li><li>Contact information for troubleshooting support, or questions regarding a clients project<ul><li>Should ask for a retainer for such support...</li></ul></li></ul></li></ul></li></ul><p><br></p></div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement137"><h6 style="font-size:30px;padding-right:50px;">What does the user need to accomplish using this application?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets137">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>What I need to accomplish with this application.</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>I need to be able to collect and centralize Strategic Objectives, Scope Requirements/ Deliverables, and Structure Global/ Local Navigation tags for each client project. (Based on Elements of User Experience)&nbsp;</p><p>I need to be able to instance each project as its own repository of information quickly, and to backup client information for later reference.&nbsp;</p><p>I need to be able to manipulate and create objectives, requirements, and deliverables; as well as global/ local tags for the site map/ wire frame (key legend) output.&nbsp;</p><p>I also need a way to view each objective&#39;s details, as well as their nested requirements and deliverables. I am going to be constantly refining each entry.</p></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro Home hide" id="deliverabledeets79"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">General Solution:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; padding-right:50px;"><strong>User is responsible for tagging urls and lists via Obj/Req/Del creation</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p>I, the user, must manually enter list and hrefs tags when creating/ editing nodes. I can no long use textarea tags, which will also mean that I can&#39;t use them in the generated html client documents for their &quot;stretching&quot; function.</p><ol><li>Maybe I should consider the possibility of stretching div containers?<ul><li><a href="https://codepen.io/cshaw/pen/zvwdbB/" target="_blank">CodePen Adjustable Div</a></li></ul></li><li>I can create a script that allows the client to &quot;select all&quot; text of each div container<ul><li><a href="https://stackoverflow.com/questions/24553251/is-it-possible-to-restrict-the-range-of-select-all-ctrla" target="_blank">Restrict the range of select all cntrl-a</a></li></ul></li></ol><p>I must replace the application&#39;s current textarea display technique, with a stretchable div container schema suited for user&#39;s html tagged input</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement79"><h6 style="padding-right:50px;font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets79">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>Application's Generated Documents must be list and href Friendly</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">The generated documents must display information in a format that allows the user to click links directly and copy paste lists in a universally understood format.
+
+I need the application to be able to output html formatted lists, in order to communicate hierarchical ideas to my  clients. 
+
+Because my clients are going to be copying and pasting this information via email, and notes. The clipboard must pick up on the list format, ghetto rigged indentation is not universally understood.</div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement79"><h6 style="font-size:30px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets79">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  <div style="padding:0;" class="AllBro Home hide" id="deliverabledeets83"> 
+                                  
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#d98484;" onclick="showHidebody()"><h6 style="font-size:30px;padding-right:50px;">Content Deliverable:</h6></button> <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#d98484;width:100%; padding-right:50px;"><strong>Floara WYSIWYG HTML Editor for ORD textarea fields.</strong></label>
+                                  <div class="scrollDiv" style="resize:vertical;width:748px;height:200px;  font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off"><p><a href="https://www.froala.com" rel="noopener noreferrer" target="_blank">Floara </a>WYSIWYG HTML Editor for ORD textarea fields.</p></div>
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:white;background-color:#e8dd67;"  type="button" data-toggle="collapse" data-target="#DeliverableRequirement83"><h6 style="padding-right:50px;font-size:30px;">Objective - What does the user want to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ReqDeets83">
+                                      <label style="margin:0;font-size:25px; padding-left:15px;background:black;color:#e8dd67;width:100%;padding-right:50px; "><strong>Application's Generated Documents must be list and href Friendly</strong></label>
+                                      <div class="scrollDiv" style="resize:vertical;width:748px;height:200px; margin-left:-2px; font-size:17px; padding-left:20px;padding-right:30px;background:white;" autocomplete="off">The generated documents must display information in a format that allows the user to click links directly and copy paste lists in a universally understood format.
+
+I need the application to be able to output html formatted lists, in order to communicate hierarchical ideas to my  clients. 
+
+Because my clients are going to be copying and pasting this information via email, and notes. The clipboard must pick up on the list format, ghetto rigged indentation is not universally understood.</div>
+                                  </div>
+
+                                  <button  style="text-align:left;width:100%;border:solid black 2px;background-color:#a3c09a;padding-right:50px;"  type="button" data-toggle="collapse" data-target="#DeliverabeRequirement83"><h6 style="font-size:30px;">What do I want the project to accomplish?</h6>
+                                  </button>
+                                  <div style="border:2px solid black;" class="show" id="ObjDeets83">
+                                      <label style="margin:0;font-size:25px; padding-left:15px; background-color:black;color:#a3c09a;width:100%;padding-right:50px;"><strong>Application Output</strong></label>
+                                      <div class="scrollDiv" style=";width:748px;height:200px;background-color:white;padding-top:10px; font-size:17px; padding-left:20;padding-right:30px;margin-left:-2px;" autocomplete="off"><p>Application should generate a....&nbsp;</p><ol><li>Site Map HTML code for button/ modal Nodes&nbsp;</li><li>Key-Legend for Wire Frames based on the information gathered&nbsp;</li><li>Goal&gt;Requirement&gt;Deliverables Text Outline&nbsp;</li><li>An HTML document that allows the client to intuitively understand OBJ/REQ/ DEL nodes, and their relationships.</li></ol></div>
+                                  </div>
+                                  </div>  </div>
+                 
+                </div>
+
+              </div>
+              </div></div>
+      </div>
+      <div id="navBar">
+        <div id="nav-thumbs"/>
+      </div>
+    </div>
+    <script>
+        const svgs=document.getElementById("svg-container").children;
+        const UA=window.navigator.userAgent;
+        const ua=(UA.indexOf('rv:11')+UA.indexOf('Firefox'))>=0;
+        const svgcount=document.getElementById('svg-container').childElementCount;
+        var styleArr=[];
+        var heightArr=[];
+        var navBar=document.getElementById('navBar');
+        var conInfo=document.getElementById('content-info');
+        for(var i=0;i<svgcount;i++){
+            styleArr[i] = {width:svgs[i].getAttribute('width'),height:svgs[i].getAttribute('height')}
+        }
+        window.onresize=function () {
+            renavstyle();
+            resvgstyle();
+        };
+        window.onscroll=renavstyle;
+        window.onload=function () {
+            renavstyle();
+            var sideWidth=navBar.offsetWidth;
+            document.getElementById('content-info').style.marginRight=sideWidth+'px';
+            document.getElementById('main-content').style.marginRight=sideWidth+'px';
+            resvgstyle();
+            doscroll();
+        };
+        function recontainstyle() {
+            var topHeight=conInfo.clientHeight;
+            var svgHeight=0;
+            for(var i=0;i<svgcount;i++){
+                heightArr[i]=svgs[i].getBoundingClientRect().height+10;
+                svgHeight+=svgs[i].clientHeight ||svgs[i].getBoundingClientRect().height;
+            }
+            var fullHeight=svgHeight+Number(topHeight);
+            if(fullHeight<window.innerHeight){
+            document.getElementById('main-content').style.position='absolute';
+            document.getElementById('main-content').style.top=topHeight+'px';
+        }else{
+            document.getElementById('main-content').style.position='';
+        }
+        }
+        function resvgstyle() {
+            var sideWidth=navBar.offsetWidth+20;
+            for(var i=0;i<svgcount;i++){
+                var oriWidth = styleArr[i].width;
+                var oriHeight = styleArr[i].height;
+                var percent = oriHeight / oriWidth;
+                var innerWidth=document.body.offsetWidth-sideWidth;
+                if (innerWidth <= oriWidth) {
+                    svgs[i].removeAttribute('width');
+                    svgs[i].removeAttribute('height');
+                    if (ua) {
+                        svgs[i].setAttribute('height',innerWidth*percent);
+                    }
+                }else {
+                    svgs[i].setAttribute('width', oriWidth);
+                    svgs[i].setAttribute('height', oriHeight);
+                }
+            }
+            recontainstyle();
+        }
+        function renavstyle() {
+            var topHeight=conInfo.clientHeight;
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            if(scrollTop>topHeight){
+                document.getElementById('navBar').style.top=0+'px';
+            }else{
+                document.getElementById('navBar').style.top=topHeight-scrollTop+'px';
+            }
+            doscroll();
+        }
+        function doscroll() {
+            var topHeight=conInfo.clientHeight;
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            for(var i=0;i<svgcount;i++){
+                var sum=0;
+                for(var j=0;j<=i;j++){
+                    sum+=heightArr[j];
+                }
+                if(scrollTop+window.innerHeight/2-topHeight-sum<0){
+                    var sub=Number(i)+1;
+                    if(document.querySelector('#nav-thumbs .selected')){
+                        document.querySelector('#nav-thumbs .selected').classList.remove('selected');
+                    }
+                    document.querySelector('.nav-thumb:nth-of-type('+sub+')').classList.add('selected');
+                    break;
+                }
+            }
+        }
+        var navs=document.querySelectorAll('.nav-thumb');
+        for(i=0;i<navs.length;i++){
+            navs[i].children[0].onclick=function () {
+                document.querySelector('#nav-thumbs .selected').classList.remove('selected');
+                this.parentNode.classList.add('selected');
+            }
+        }
+</script>
+  </body>
+</html>
