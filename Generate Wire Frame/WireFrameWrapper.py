@@ -8,9 +8,9 @@ arrayEdraw = []
 arrayEdraw2 = []
 hrefIDArray = []
 #This is to store the Original EDraw gTags string into a var
-#********************************************DO NOT FUCKING FORGET TO Write "DelID11" + The DeliverableID or LocalNavTag ID 
+#********************************************DO NOT FORGET TO Write "DelID11" + The DeliverableID or LocalNavTag ID 
 #when labeling EDraw's modal button placeholders... I REPEAT, IT WONT WORK WITHOUT DOING THIS!!!!!!!!!!!!!!!!!!!************ 
-f = open("WireFrame_EDraw.htm","r")
+f = open('WireFrame_EDraw.html',"r")
 string = f.read()
 batRegex = re.compile(r'<g.*</g>')
 titles = batRegex.findall(string)
@@ -20,8 +20,8 @@ for title in titles:
 Gtags = OriginalGTagString.split('</g>')  
 count = 0
 for x in Gtags:
-    Gtags[count]  = re.sub('path=\"\#[a-zA-Z0-0]"','', Gtags[count])
-    Gtags[count]  = re.sub('fill=\"\#[a-zA-Z0-0]"','', Gtags[count])
+    Gtags[count] = re.sub('path=\"\#[a-zA-Z0-0]"','', Gtags[count])
+    Gtags[count] = re.sub('fill=\"\#[a-zA-Z0-0]"','', Gtags[count])
     Gtags[count] = x + "</g>"
     count += 1
   
@@ -31,8 +31,8 @@ for x in Gtags:
 ModalButtons = open("WireFrame_ModalButtons.html", "r")
 count = 0
 for line in ModalButtons:
-    if re.search("<a  onclick=.*</h4></a>", line):
-        batRegex = re.compile(r'<a  onclick=.*</h4></a>')
+    if re.search("<a onclick=.*</h4></a>", line):
+        batRegex = re.compile(r'<a onclick=.*</h4></a>')
         tags = batRegex.findall(line)
         for tag in tags:
             arrayHref.append(tag)
@@ -42,6 +42,8 @@ for line in ModalButtons:
         for tag in tags:
             arrayTemp = tag.replace("DelID11","")
             hrefIDArray.append(arrayTemp)
+            
+
 
 
     
@@ -50,56 +52,51 @@ for line in ModalButtons:
     titles = batRegex.findall(line)
     for title in titles:
         arrayTitleReCompileStatement.append(title)
-        print(title)
         arrayTitleReCompileStatement[count] = arrayTitleReCompileStatement[count].replace('*','')
-        print(arrayTitleReCompileStatement[count] )
         count +=1 
 
     
     
 #format each g tag within the GTag Array   
 for x in hrefIDArray:
-    print(x)
     pattern = re.compile('.*DelID11'+ x +'.*')
     count = 0
     count1 = 0
     for y in arrayHref:
-        
+
         if pattern.match(y):
-            print(y+ "yup" +'DelID11'+ x )
+            
             #We need to match titles to the array tags
             count = 0
             pattern2 = re.compile('^'+ x +'\.\).*')
             for a in arrayTitleReCompileStatement:
-                if pattern2.match(a):  
-                    print( 'yo')
+                
+                if pattern2.match(a): 
+                    print(a)
                     for z in Gtags:
-                        if pattern.match(z):  
-                            print(z) 
-                            LeadATag = re.sub(r'<h4 >.*</h4></a>', '', y)
-                            print(LeadATag)
+                        if pattern.match(z):   
+                            print("ya")
+                            LeadATag = re.sub(r'<h4>.*</h4></a>', '', y)
                             Gtags[count] =  LeadATag + z + "</a>"
-                            
                             Gtags[count]  = re.sub('>DelID11'+x,'>'+ a, Gtags[count])
-                            print(Gtags[count])
-                    
-                        count += 1
-      
+                        
+                        count += 1      
 
 #Get the Div Modal windows into a string
 f = open("WireFrame_ModalButtons.html","r")
 string = f.read()
 titles = re.findall(r'<div id.*</div>',string, re.DOTALL)
+
 stringModal = ""
 count = 0
 for title in titles:
     stringModal += title
 ArrayModal = re.split(r'</div>.*<br>', stringModal)
 
+
 count = 0
 FinalModalString = ''
 for x in ArrayModal:
-
     ArrayModal[count] = ArrayModal[count] + "</div>"
     FinalModalString += ArrayModal[count] 
 
@@ -124,7 +121,7 @@ NewGtagString = ''
 count = 0
 for x in Gtags:
     NewGtagString += str(x)
-    
+
     count += 1
 
     
@@ -132,16 +129,17 @@ for x in Gtags:
 #Replace Edraw.html g tags with modal g tag string
 
 # Read in the file
-with open('WireFrame_Edraw.htm', 'r') as file :
+with open('WireFrame_Edraw.html', 'r') as file :
     filedata = file.read()
 # Replace the target string
 result = re.sub(r'<g[\n\s\S.*]*</g>',NewGtagString ,filedata) 
 result = result.replace(r'</svg></div>',FinalModalString) 
 result = result.replace(r'</head>', stringLinkRef) 
+result = re.sub(r'href=\"http:\/\/localhost\/.*?=[0-9]#', '', result) 
 
           
 #overwrite original Edraw.htm
-file='WireFrame_Edraw.htm' 
+file='WireFrame_Edraw.html' 
 with open(file, 'w') as filetowrite:
     filetowrite.write(result)
     
@@ -155,9 +153,7 @@ for line in ModalButtons:
 
 string = ModalButtons.read()
 batRegex = re.search(r'<a href(.|\n)*</div>', modalString)
-
-
-#This is to get the WebPageTitles and arrayHref arrays
+#This is to get the WebPageTitles and arrayHref array?
 count = 0
 
 
